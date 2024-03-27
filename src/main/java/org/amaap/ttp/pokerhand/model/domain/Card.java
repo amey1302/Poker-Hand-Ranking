@@ -4,8 +4,10 @@ import org.amaap.ttp.pokerhand.model.domain.exception.InvalidCardException;
 import org.amaap.ttp.pokerhand.model.domain.exception.InvalidCardRankException;
 import org.amaap.ttp.pokerhand.model.domain.exception.InvalidSuitException;
 
-import java.util.EnumSet;
 import java.util.Objects;
+
+import static org.amaap.ttp.pokerhand.model.domain.validator.CardValidator.isInvalidCardRank;
+import static org.amaap.ttp.pokerhand.model.domain.validator.CardValidator.isInvalidCardSuit;
 
 public class Card {
     private Suit suit;
@@ -21,23 +23,7 @@ public class Card {
         if (isInvalidCardRank(rank)) throw new InvalidCardRankException("The Card Rank is Invalid " + rank);
         return new Card(suit, rank);
     }
-
-    private static boolean isInvalidCardRank(Rank rank) {
-        return !isValidCardRank(rank);
-    }
-
-    private static boolean isValidCardRank(Rank rank) {
-        return EnumSet.allOf(Rank.class).contains(rank);
-    }
-
-    private static boolean isInvalidCardSuit(Suit suit) {
-        return !isValidCardSuit(suit);
-    }
-
-    private static boolean isValidCardSuit(Suit suit) {
-        return EnumSet.allOf(Suit.class).contains(suit);
-    }
-
+    
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
