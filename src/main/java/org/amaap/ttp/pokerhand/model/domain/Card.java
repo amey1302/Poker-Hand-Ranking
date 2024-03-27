@@ -51,8 +51,16 @@ public class Card {
         return Objects.hash(suit, rank);
     }
 
+    public Suit getSuit() {
+        return suit;
+    }
+
+    public Rank getRank() {
+        return rank;
+    }
+
     @Override
     public String toString() {
-        return String.format(suit + "" + rank);
+        return String.format(suit + "_" + rank);
     }
 }

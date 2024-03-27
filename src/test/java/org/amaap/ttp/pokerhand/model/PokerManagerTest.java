@@ -5,8 +5,12 @@ import org.amaap.ttp.pokerhand.model.domain.Rank;
 import org.amaap.ttp.pokerhand.model.domain.Suit;
 import org.amaap.ttp.pokerhand.model.domain.exception.InvalidCardException;
 import org.amaap.ttp.pokerhand.model.domain.exception.InvalidCardRankException;
+import org.amaap.ttp.pokerhand.model.domain.exception.InvalidHandCapacityException;
 import org.amaap.ttp.pokerhand.model.domain.exception.InvalidSuitException;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -71,5 +75,7 @@ public class PokerManagerTest {
             pokerManager.createCard(suit, rank);
         });
     }
+
+
 }
 
