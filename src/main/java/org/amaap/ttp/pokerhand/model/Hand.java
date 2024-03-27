@@ -13,8 +13,17 @@ public class Hand {
     }
 
     public static Hand create(List<Card> cards) throws InvalidHandCapacityException {
-        if (cards.size() > 5) throw new InvalidHandCapacityException("Hand should contains exactly five Cards");
+        if (cards == null || isInvalidHandCapacity(cards))
+            throw new InvalidHandCapacityException("Hand should contains exactly five Cards");
         return new Hand(cards);
+    }
+
+    private static boolean isInvalidHandCapacity(List<Card> cards) {
+        return !isValidHandCapacity(cards);
+    }
+
+    private static boolean isValidHandCapacity(List<Card> cards) {
+        return cards.size() == 5 ;
     }
 
     public List<Card> getCards() {
