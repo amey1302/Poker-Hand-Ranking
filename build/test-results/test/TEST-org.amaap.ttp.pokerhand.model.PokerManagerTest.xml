@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.amaap.ttp.pokerhand.model.PokerManagerTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2024-03-27T15:10:18" hostname="LAPTOP-205J7BQ6" time="0.034">
+  <properties/>
+  <testcase name="shouldBeAbleToCreateASingleCard()" classname="org.amaap.ttp.pokerhand.model.PokerManagerTest" time="0.019"/>
+  <testcase name="shouldBeAbleToThrowInvalidCardRankExceptionWhenCardRankIsInvalid()" classname="org.amaap.ttp.pokerhand.model.PokerManagerTest" time="0.003"/>
+  <testcase name="shouldBeAbleToEvaluateHandAndReturnItsRanking()" classname="org.amaap.ttp.pokerhand.model.PokerManagerTest" time="0.001"/>
+  <testcase name="shouldBeAbleToAssignCardsToHand()" classname="org.amaap.ttp.pokerhand.model.PokerManagerTest" time="0.001"/>
+  <testcase name="shouldBeAbleToThrowInvalidCardExceptionWhenCardInvalid()" classname="org.amaap.ttp.pokerhand.model.PokerManagerTest" time="0.001"/>
+  <testcase name="shouldAbleToInitializePokerManagerToPerformOperations()" classname="org.amaap.ttp.pokerhand.model.PokerManagerTest" time="0.002"/>
+  <testcase name="shouldBeAbleToThrowInvalidSuitExceptionWhenSuitIsInvalid()" classname="org.amaap.ttp.pokerhand.model.PokerManagerTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

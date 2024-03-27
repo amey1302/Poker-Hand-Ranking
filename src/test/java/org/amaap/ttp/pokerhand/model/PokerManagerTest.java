@@ -94,5 +94,24 @@ public class PokerManagerTest {
         assertEquals(expectedCards.size(),actualCards.size());
         assertEquals(expectedCards,actualCards);
     }
+    @Test
+    void shouldBeAbleToEvaluateHandAndReturnItsRanking() throws InvalidCardException, InvalidHandCapacityException {
+        // arrange
+        List<Card> cards = new ArrayList<>();
+        cards.add(Card.create(Suit.CLUB, Rank.TWO));
+        cards.add(Card.create(Suit.CLUB, Rank.THREE));
+        cards.add(Card.create(Suit.CLUB, Rank.FOUR));
+        cards.add(Card.create(Suit.CLUB, Rank.FIVE));
+        cards.add(Card.create(Suit.CLUB, Rank.SIX));
+        Hand.create(cards);
+        String expected = "Straight-Flush";
+
+        // act
+        String actual = pokerManager.evaluateHandRanking(cards);
+
+        // assert
+        assertEquals(expected,actual);
+    }
+
 }
 

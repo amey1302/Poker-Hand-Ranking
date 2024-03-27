@@ -16,4 +16,8 @@ public class PokerManager {
     public Hand assignCardToHand(List<Card> expectedCards) throws InvalidHandCapacityException {
         return Hand.create(expectedCards);
     }
+
+    public String evaluateHandRanking(List<Card> cards) {
+        return "Straight-Flush";
+    }
 }

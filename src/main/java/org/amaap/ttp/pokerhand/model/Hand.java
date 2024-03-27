@@ -29,5 +29,15 @@ public class Hand {
     public List<Card> getCards() {
         return cards;
     }
+    public String getStringRepresentation() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Card card : cards) {
+            stringBuilder.append(card.getSuit().getAbbreviation()).append(card.getRank().getAbbreviation()).append(" ");
+        }
+        if (stringBuilder.length() > 0) {
+            stringBuilder.setLength(stringBuilder.length() - 1);
+        }
+        return stringBuilder.toString();
+    }
 
 }
