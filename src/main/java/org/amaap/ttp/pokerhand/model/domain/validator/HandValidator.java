@@ -9,7 +9,7 @@ public class HandValidator {
         return !isValidHandCapacity(cards);
     }
 
-    private static boolean isValidHandCapacity(List<Card> cards) {
+    static boolean isValidHandCapacity(List<Card> cards) {
         return cards.size() == 5;
     }
 }

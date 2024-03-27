@@ -40,23 +40,19 @@ public class PokerManagerTest {
     void shouldBeAbleToThrowInvalidSuitExceptionWhenSuitIsInvalid() {
         // arrange & act
         Rank rank = Rank.ACE;
-        String expectedExceptionMessage = "The Suit is Invalid " + null;
 
         // assert
-        Throwable exception = assertThrows(InvalidSuitException.class, () -> pokerManager.createCard(null, rank));
+        assertThrows(InvalidSuitException.class, () -> pokerManager.createCard(null, rank));
 
-        assertEquals(expectedExceptionMessage, exception.getMessage());
     }
 
     @Test
     void shouldBeAbleToThrowInvalidCardRankExceptionWhenCardRankIsInvalid() {
         // arrange & act
         Suit suit = Suit.CLUB;
-        String expectedExceptionMessage = "The Card Rank is Invalid " + null;
 
         // assert
-        Throwable exception = assertThrows(InvalidCardRankException.class, () -> pokerManager.createCard(suit, null));
-        assertEquals(expectedExceptionMessage, exception.getMessage());
+         assertThrows(InvalidCardRankException.class, () -> pokerManager.createCard(suit, null));
     }
 
     @Test

@@ -23,7 +23,7 @@ public class Card {
         if (isInvalidCardRank(rank)) throw new InvalidCardRankException("The Card Rank is Invalid " + rank);
         return new Card(suit, rank);
     }
-    
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

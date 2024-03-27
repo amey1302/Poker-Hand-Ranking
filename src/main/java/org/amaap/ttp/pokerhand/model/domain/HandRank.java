@@ -17,10 +17,5 @@ public enum HandRank {
         this.highestCard = highestCard;
         return this;
     }
-
-    public Rank getHighestCard() {
-        return highestCard;
-    }
-
-
+    
 }
