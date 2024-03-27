@@ -1,10 +1,12 @@
 package org.amaap.ttp.pokerhand.model;
 
 import org.amaap.ttp.pokerhand.model.domain.Card;
+import org.amaap.ttp.pokerhand.model.domain.Hand;
 import org.amaap.ttp.pokerhand.model.domain.Rank;
 import org.amaap.ttp.pokerhand.model.domain.Suit;
 import org.amaap.ttp.pokerhand.model.domain.exception.InvalidCardException;
 import org.amaap.ttp.pokerhand.model.domain.exception.InvalidHandCapacityException;
+import org.amaap.ttp.pokerhand.model.services.HandRankEvaluator;
 
 import java.util.List;
 
@@ -17,7 +19,7 @@ public class PokerManager {
         return Hand.create(expectedCards);
     }
 
-    public String evaluateHandRanking(List<Card> cards) {
-        return "Straight-Flush";
+    public String evaluateHandRanking(Hand hand) {
+        return HandRankEvaluator.evaluateRanking(hand);
     }
 }

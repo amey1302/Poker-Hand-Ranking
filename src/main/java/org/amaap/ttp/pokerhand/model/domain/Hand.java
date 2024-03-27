@@ -1,6 +1,5 @@
-package org.amaap.ttp.pokerhand.model;
+package org.amaap.ttp.pokerhand.model.domain;
 
-import org.amaap.ttp.pokerhand.model.domain.Card;
 import org.amaap.ttp.pokerhand.model.domain.exception.InvalidHandCapacityException;
 
 import java.util.List;
