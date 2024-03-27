@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.amaap.ttp.pokerhand.model.PokerManagerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-03-26T17:56:09" hostname="LAPTOP-205J7BQ6" time="0.03">
+<testsuite name="org.amaap.ttp.pokerhand.model.PokerManagerTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-03-27T09:54:58" hostname="LAPTOP-205J7BQ6" time="0.028">
   <properties/>
-  <testcase name="shouldBeAbleToCreateASingleCard()" classname="org.amaap.ttp.pokerhand.model.PokerManagerTest" time="0.025"/>
-  <testcase name="shouldAbleToInitializePokerManagerToPerformOperations()" classname="org.amaap.ttp.pokerhand.model.PokerManagerTest" time="0.002"/>
-  <system-out><![CDATA[CEIGHT
-CEIGHT
-]]></system-out>
+  <testcase name="shouldBeAbleToCreateASingleCard()" classname="org.amaap.ttp.pokerhand.model.PokerManagerTest" time="0.016"/>
+  <testcase name="shouldBeAbleToThrowInvalidCardRankExceptionWhenCardRankIsInvalid()" classname="org.amaap.ttp.pokerhand.model.PokerManagerTest" time="0.003"/>
+  <testcase name="shouldBeAbleToThrowInvalidCardExceptionWhenCardInvalid()" classname="org.amaap.ttp.pokerhand.model.PokerManagerTest" time="0.002"/>
+  <testcase name="shouldAbleToInitializePokerManagerToPerformOperations()" classname="org.amaap.ttp.pokerhand.model.PokerManagerTest" time="0.001"/>
+  <testcase name="shouldBeAbleToThrowInvalidSuitExceptionWhenSuitIsInvalid()" classname="org.amaap.ttp.pokerhand.model.PokerManagerTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
