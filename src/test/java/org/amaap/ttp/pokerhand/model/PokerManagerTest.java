@@ -1,9 +1,6 @@
 package org.amaap.ttp.pokerhand.model;
 
-import org.amaap.ttp.pokerhand.model.domain.Card;
-import org.amaap.ttp.pokerhand.model.domain.Hand;
-import org.amaap.ttp.pokerhand.model.domain.Rank;
-import org.amaap.ttp.pokerhand.model.domain.Suit;
+import org.amaap.ttp.pokerhand.model.domain.*;
 import org.amaap.ttp.pokerhand.model.domain.exception.InvalidCardException;
 import org.amaap.ttp.pokerhand.model.domain.exception.InvalidCardRankException;
 import org.amaap.ttp.pokerhand.model.domain.exception.InvalidHandCapacityException;
@@ -105,10 +102,10 @@ public class PokerManagerTest {
         cards.add(Card.create(Suit.CLUB, Rank.FIVE));
         cards.add(Card.create(Suit.CLUB, Rank.SIX));
         Hand hand = Hand.create(cards);
-        String expected = "Straight-Flush";
+        HandRank expected = HandRank.STRAIGHT_FLUSH;
 
         // act
-        String actual = pokerManager.evaluateHandRanking(hand);
+        HandRank actual = pokerManager.evaluateHandRanking(hand);
 
         // assert
         assertEquals(expected,actual);
