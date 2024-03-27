@@ -9,7 +9,7 @@ public enum HandRank {
     STRAIGHT,
     THREE_OF_A_KIND,
     TWO_PAIR,
-    ONE_PAIR,
+    PAIR,
     HIGH_CARD;
 
 

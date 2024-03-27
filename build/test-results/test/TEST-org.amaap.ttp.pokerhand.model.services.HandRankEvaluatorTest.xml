@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.amaap.ttp.pokerhand.model.services.HandRankEvaluatorTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2024-03-27T17:34:51" hostname="LAPTOP-205J7BQ6" time="0.037">
+  <properties/>
+  <testcase name="shouldBeAbleToReturnTheRankForRoyalFlush()" classname="org.amaap.ttp.pokerhand.model.services.HandRankEvaluatorTest" time="0.018"/>
+  <testcase name="shouldBeAbleToReturnTheRankForTwoPair()" classname="org.amaap.ttp.pokerhand.model.services.HandRankEvaluatorTest" time="0.001"/>
+  <testcase name="shouldBeAbleToReturnTheRankForPair()" classname="org.amaap.ttp.pokerhand.model.services.HandRankEvaluatorTest" time="0.0"/>
+  <testcase name="shouldBeAbleToReturnTheRankForThreeOfAKind()" classname="org.amaap.ttp.pokerhand.model.services.HandRankEvaluatorTest" time="0.001"/>
+  <testcase name="shouldBeAbleToReturnTheRankForStraight()" classname="org.amaap.ttp.pokerhand.model.services.HandRankEvaluatorTest" time="0.001"/>
+  <testcase name="shouldBeAbleToReturnTheRankForFullHouse()" classname="org.amaap.ttp.pokerhand.model.services.HandRankEvaluatorTest" time="0.001"/>
+  <testcase name="shouldBeAbleToReturnTheRankForStraightFlush()" classname="org.amaap.ttp.pokerhand.model.services.HandRankEvaluatorTest" time="0.0"/>
+  <testcase name="shouldBeAbleToReturnTheRankForFLUSH()" classname="org.amaap.ttp.pokerhand.model.services.HandRankEvaluatorTest" time="0.001"/>
+  <testcase name="shouldBeAbleToReturnTheRankForFourOfAKind()" classname="org.amaap.ttp.pokerhand.model.services.HandRankEvaluatorTest" time="0.002"/>
+  <testcase name="shouldBeAbleToReturnTheRankForHighCard()" classname="org.amaap.ttp.pokerhand.model.services.HandRankEvaluatorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

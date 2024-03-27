@@ -47,8 +47,9 @@ public class PokerManagerTest {
             pokerManager.createCard(suit, rank);
         });
 
-        assertEquals(expectedExceptionMessage,exception.getMessage() );
+        assertEquals(expectedExceptionMessage, exception.getMessage());
     }
+
     @Test
     void shouldBeAbleToThrowInvalidCardRankExceptionWhenCardRankIsInvalid() {
         // arrange & act
@@ -60,8 +61,9 @@ public class PokerManagerTest {
         Throwable exception = assertThrows(InvalidCardRankException.class, () -> {
             pokerManager.createCard(suit, rank);
         });
-        assertEquals(expectedExceptionMessage,exception.getMessage());
+        assertEquals(expectedExceptionMessage, exception.getMessage());
     }
+
     @Test
     void shouldBeAbleToThrowInvalidCardExceptionWhenCardInvalid() {
         // arrange & act
@@ -89,9 +91,10 @@ public class PokerManagerTest {
         List<Card> actualCards = hand.getCards();
 
         // assert
-        assertEquals(expectedCards.size(),actualCards.size());
-        assertEquals(expectedCards,actualCards);
+        assertEquals(expectedCards.size(), actualCards.size());
+        assertEquals(expectedCards, actualCards);
     }
+
     @Test
     void shouldBeAbleToEvaluateHandAndReturnItsRanking() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
@@ -108,7 +111,7 @@ public class PokerManagerTest {
         HandRank actual = pokerManager.evaluateHandRanking(hand);
 
         // assert
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
 }
