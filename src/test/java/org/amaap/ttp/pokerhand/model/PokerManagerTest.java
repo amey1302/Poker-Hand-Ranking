@@ -113,6 +113,5 @@ public class PokerManagerTest {
         // assert
         assertEquals(expected, actual);
     }
-
 }
 

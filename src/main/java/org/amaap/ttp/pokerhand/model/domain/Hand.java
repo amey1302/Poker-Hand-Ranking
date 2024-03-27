@@ -30,12 +30,14 @@ public class Hand {
     }
     public String getStringRepresentation() {
         StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("[");
         for (Card card : cards) {
-            stringBuilder.append(card.getSuit().getAbbreviation()).append(card.getRank().getAbbreviation()).append(" ");
+            stringBuilder.append("\"").append(card.getSuit().getAbbreviation()).append(card.getRank().getAbbreviation()).append("\" ");
         }
         if (stringBuilder.length() > 0) {
             stringBuilder.setLength(stringBuilder.length() - 1);
         }
+        stringBuilder.append("]");
         return stringBuilder.toString();
     }
 

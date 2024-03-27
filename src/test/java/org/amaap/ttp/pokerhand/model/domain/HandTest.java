@@ -1,17 +1,15 @@
 package org.amaap.ttp.pokerhand.model.domain;
 
-import org.amaap.ttp.pokerhand.model.domain.Card;
-import org.amaap.ttp.pokerhand.model.domain.Hand;
-import org.amaap.ttp.pokerhand.model.domain.Rank;
-import org.amaap.ttp.pokerhand.model.domain.Suit;
 import org.amaap.ttp.pokerhand.model.domain.exception.InvalidCardException;
 import org.amaap.ttp.pokerhand.model.domain.exception.InvalidHandCapacityException;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class HandTest {
     @Test
@@ -28,9 +26,10 @@ class HandTest {
         Hand actual = Hand.create(cards);
 
         // assert
-        assertEquals(cards ,actual.getCards());
+        assertEquals(cards, actual.getCards());
 
     }
+
     @Test
     void shouldBeAbleToThrowInvalidHandCapacityExceptionWhenHandCapacityIsInvalid() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
@@ -45,10 +44,31 @@ class HandTest {
         // act & assert
         assertThrows(InvalidHandCapacityException.class, () -> Hand.create(cards));
     }
+
     @Test
-    void shouldBeAbleToThrowInvalidHandCapacityExceptionWhenHandCapacityIsNegative() throws InvalidCardException, InvalidHandCapacityException {
+    void shouldBeAbleToThrowInvalidHandCapacityExceptionWhenHandCapacityIsNegative() {
         // act & assert
         assertThrows(InvalidHandCapacityException.class, () -> Hand.create(null));
     }
 
+    @Test
+    void shouldBeAbleGetStringRepresentationOfHand() throws InvalidCardException, InvalidHandCapacityException {
+        // arrange
+        List<Card> cards = new ArrayList<>();
+        cards.add(Card.create(Suit.CLUB, Rank.TWO));
+        cards.add(Card.create(Suit.CLUB, Rank.THREE));
+        cards.add(Card.create(Suit.CLUB, Rank.FOUR));
+        cards.add(Card.create(Suit.CLUB, Rank.FIVE));
+        cards.add(Card.create(Suit.CLUB, Rank.SIX));
+        Hand hand = Hand.create(cards);
+        String expected = "[" + hand.getCards().stream()
+                .map(card -> "\"" + card.getSuit().getAbbreviation() + card.getRank().getAbbreviation() + "\"")
+                .collect(Collectors.joining(" ")) + "]";
+
+        // act
+        String actual = hand.getStringRepresentation();
+
+        // assert
+        assertEquals(expected, actual);
+    }
 }
