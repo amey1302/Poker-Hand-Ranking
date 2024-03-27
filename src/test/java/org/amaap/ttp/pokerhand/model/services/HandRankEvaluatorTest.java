@@ -200,4 +200,22 @@ class HandRankEvaluatorTest {
         // assert
         assertEquals(expected, actual);
     }
+    @Test
+    void shouldBeAbleToReturnTheRankForHighCardWithHighRankCard() throws InvalidCardException, InvalidHandCapacityException {
+        // arrange
+        List<Card> cards = new ArrayList<>();
+        cards.add(Card.create(Suit.HEART, Rank.SEVEN));
+        cards.add(Card.create(Suit.CLUB, Rank.NINE));
+        cards.add(Card.create(Suit.SPADE, Rank.EIGHT));
+        cards.add(Card.create(Suit.DIAMOND, Rank.FIVE));
+        cards.add(Card.create(Suit.CLUB, Rank.TWO));
+        Hand hand = Hand.create(cards);
+        HandRank expected = HandRank.HIGH_CARD.withHighestCard(Rank.NINE);
+
+        // act
+        HandRank actual = HandRankEvaluator.evaluateRanking(hand);
+
+        // assert
+        assertEquals(expected, actual);
+    }
 }

@@ -37,7 +37,9 @@ public class HandRankEvaluator {
         } else if (isPair(rankCount)) {
             return HandRank.PAIR;
         } else {
-            return HandRank.HIGH_CARD;
+            cards.sort(Comparator.comparing(card -> card.getRank()));
+            Rank highestCard = cards.get(cards.size() -1 ).getRank();
+            return HandRank.HIGH_CARD.withHighestCard(highestCard);
         }
     }
 
