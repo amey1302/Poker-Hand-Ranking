@@ -76,6 +76,23 @@ public class PokerManagerTest {
         });
     }
 
+    @Test
+    void shouldBeAbleToAssignCardsToHand() throws InvalidCardException, InvalidHandCapacityException {
+        // arrange
+        List<Card> expectedCards = new ArrayList<>();
+        expectedCards.add(Card.create(Suit.CLUB, Rank.EIGHT));
+        expectedCards.add(Card.create(Suit.DIAMOND, Rank.NINE));
+        expectedCards.add(Card.create(Suit.SPADE, Rank.JACK));
+        expectedCards.add(Card.create(Suit.HEART, Rank.QUEEN));
+        expectedCards.add(Card.create(Suit.CLUB, Rank.KING));
 
+        // act
+        Hand hand = pokerManager.assignCardToHand(expectedCards);
+        List<Card> actualCards = hand.getCards();
+
+        // assert
+        assertEquals(expectedCards.size(),actualCards.size());
+        assertEquals(expectedCards,actualCards);
+    }
 }
 

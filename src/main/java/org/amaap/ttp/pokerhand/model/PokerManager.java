@@ -13,5 +13,7 @@ public class PokerManager {
         return Card.create(suit, rank);
     }
 
-
+    public Hand assignCardToHand(List<Card> expectedCards) throws InvalidHandCapacityException {
+        return Hand.create(expectedCards);
+    }
 }
