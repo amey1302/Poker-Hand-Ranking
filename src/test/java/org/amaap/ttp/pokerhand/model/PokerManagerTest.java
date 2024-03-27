@@ -1,5 +1,6 @@
 package org.amaap.ttp.pokerhand.model;
 
+import org.amaap.ttp.pokerhand.model.builder.CardBuilder;
 import org.amaap.ttp.pokerhand.model.domain.*;
 import org.amaap.ttp.pokerhand.model.domain.exception.InvalidCardException;
 import org.amaap.ttp.pokerhand.model.domain.exception.InvalidCardRankException;
@@ -7,12 +8,12 @@ import org.amaap.ttp.pokerhand.model.domain.exception.InvalidHandCapacityExcepti
 import org.amaap.ttp.pokerhand.model.domain.exception.InvalidSuitException;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PokerManagerTest {
+    CardBuilder cardBuilder = new CardBuilder();
     PokerManager pokerManager = new PokerManager();
 
     @Test
@@ -38,14 +39,11 @@ public class PokerManagerTest {
     @Test
     void shouldBeAbleToThrowInvalidSuitExceptionWhenSuitIsInvalid() {
         // arrange & act
-        Suit suit = null;
         Rank rank = Rank.ACE;
-        String expectedExceptionMessage = "The Suit is Invalid " + suit;
+        String expectedExceptionMessage = "The Suit is Invalid " + null;
 
         // assert
-        Throwable exception = assertThrows(InvalidSuitException.class, () -> {
-            pokerManager.createCard(suit, rank);
-        });
+        Throwable exception = assertThrows(InvalidSuitException.class, () -> pokerManager.createCard(null, rank));
 
         assertEquals(expectedExceptionMessage, exception.getMessage());
     }
@@ -54,37 +52,23 @@ public class PokerManagerTest {
     void shouldBeAbleToThrowInvalidCardRankExceptionWhenCardRankIsInvalid() {
         // arrange & act
         Suit suit = Suit.CLUB;
-        Rank rank = null;
-        String expectedExceptionMessage = "The Card Rank is Invalid " + rank;
+        String expectedExceptionMessage = "The Card Rank is Invalid " + null;
 
         // assert
-        Throwable exception = assertThrows(InvalidCardRankException.class, () -> {
-            pokerManager.createCard(suit, rank);
-        });
+        Throwable exception = assertThrows(InvalidCardRankException.class, () -> pokerManager.createCard(suit, null));
         assertEquals(expectedExceptionMessage, exception.getMessage());
     }
 
     @Test
     void shouldBeAbleToThrowInvalidCardExceptionWhenCardInvalid() {
-        // arrange & act
-        Suit suit = null;
-        Rank rank = null;
-
-        // assert
-        assertThrows(InvalidCardException.class, () -> {
-            pokerManager.createCard(suit, rank);
-        });
+        // act & assert
+        assertThrows(InvalidCardException.class, () -> pokerManager.createCard(null, null));
     }
 
     @Test
     void shouldBeAbleToAssignCardsToHand() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
-        List<Card> expectedCards = new ArrayList<>();
-        expectedCards.add(Card.create(Suit.CLUB, Rank.EIGHT));
-        expectedCards.add(Card.create(Suit.DIAMOND, Rank.NINE));
-        expectedCards.add(Card.create(Suit.SPADE, Rank.JACK));
-        expectedCards.add(Card.create(Suit.HEART, Rank.QUEEN));
-        expectedCards.add(Card.create(Suit.CLUB, Rank.KING));
+        List<Card> expectedCards = cardBuilder.getRandomCards();
 
         // act
         Hand hand = pokerManager.assignCardToHand(expectedCards);
@@ -98,12 +82,7 @@ public class PokerManagerTest {
     @Test
     void shouldBeAbleToEvaluateHandAndReturnItsRanking() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
-        List<Card> cards = new ArrayList<>();
-        cards.add(Card.create(Suit.CLUB, Rank.TWO));
-        cards.add(Card.create(Suit.CLUB, Rank.THREE));
-        cards.add(Card.create(Suit.CLUB, Rank.FOUR));
-        cards.add(Card.create(Suit.CLUB, Rank.FIVE));
-        cards.add(Card.create(Suit.CLUB, Rank.SIX));
+        List<Card> cards = cardBuilder.getCardsForStraightFlush();
         Hand hand = Hand.create(cards);
         HandRank expected = HandRank.STRAIGHT_FLUSH;
 
