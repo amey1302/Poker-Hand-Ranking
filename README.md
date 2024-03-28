@@ -28,78 +28,74 @@ The high card rule should return the highest card as well. For example, the hand
 For this, I have created the following classes:
 
 ### Overall Test Coverage Report
-![Test Coverage Report](https://github.com/amey1302/Poker-Hand-Ranking/assets/114746925/50ede70e-b742-4e7e-b55c-2282a0bd0a61)
+![Test Coverage Report](https://github.com/amey1302/Poker-Hand-Ranking/assets/114746925/5a9a9241-e299-4803-ae36-2b1fa3b17bc6)
+
+---
+
 ### Package: org.amaap.ttp.pokerhand
 
 #### Model
 
-=======
-The high card rule should return the highest card as well. For example, the hand ["S2" "D5" "C7" "ST" "HA"] should return "high-card-ace".
-
----
-
-## Solution
-
-For this, I have created the following classes:
-#### Overall Test Coverage Report
-![image](https://github.com/amey1302/Poker-Hand-Ranking/assets/114746925/50ede70e-b742-4e7e-b55c-2282a0bd0a61)
-
----
-### Package: org.amaap.ttp.pokerhand
----
-#### Model
 - **domain**
   - **Exception**: Contains all defined exceptions for data validations.
   - **validators**
-    - **Card Validator**: Contains all validators for a card.
-    - **Hand Validator**: Contains all validators for a hand.
+    - **Card Validator**: Validates properties of a card.
+    - **Hand Validator**: Validates properties of a hand.
   - **Card**
     - **State**
       - private Suit suit
       - private Rank rank
     - **Behaviour**
-      - Smart Constructor
-      - Getter and toString
+      - Smart Constructor: Creates a new Card object.
+      - Getter and toString: Accesses and represents card properties.
   - **Hand**
     - **State**
       - private List<Card> cards
     - **Behaviour**
-      - Smart Constructor
-      - Getter
-      - getStringRepresentation
+      - Smart Constructor: Creates a new Hand object.
+      - Getter: Retrieves the list of cards.
+      - getStringRepresentation: Generates a string representation of the hand.
   - **HandRank**: Enum
     - **State**
       - Royal_FLUSH,...,HIGH_CARD
       - Rank HighestCard
     - **Behaviour**
-      - HandRank withHighestCard
+      - withHighestCard: Sets the highest card for a hand rank.
   - **Rank**: Enum
     - **State**
       - private final String abbreviation
       - Rank from TWO("2"),...,ACE("A")
     - **Behaviour**
-      - Constructor
-      - Getter
+      - Constructor: Creates a new Rank object.
+      - Getter: Retrieves the abbreviation.
   - **Suit**: Enum
     - **State**
       - private final String abbreviation
       - SPADE("S"), HEART("H"), CLUB("C"), DIAMOND("D")
     - **Behaviour**
-      - Constructor
-      - Getter
-
-- **service**
-  - **HandRankEvaluataor**
+      - Constructor: Creates a new Suit object.
+      - Getter: Retrieves the abbreviation.
+  - **HandRankEvaluator**
     - **Behaviour**
-      - public static HandRank evaluateRanking(Hand hand)
-      - boolean methods for all HandRankingCategories
+      - evaluateRanking: Evaluates the hand ranking.
+      - rankCount : method which returns rank count in the hand
+      - suitCount : method which returns suit count in the hand
+
+- **ranking**
+  - **Flush**: Checks if all cards are in the same suit.
+  - **RoyalFlush**: Checks for a royal flush hand.
+  - **StraightFlush**: Checks for a straight flush hand.
+  - **FourOfKind**: Checks for a four of a kind hand.
+  - **FullHouse**: Checks for a full house hand.
+  - **Straight**: Checks for a straight hand.
+  - **ThreeOfKind**: Checks for a three of a kind hand.
+  - **TwoPair**: Checks for a two pair hand.
+  - **Pair**: Checks for a pair hand.
+  - **HighCard**: Checks for a high card hand.
 
 #### Class: PokerManager
-<<<<<<< HEAD
-
-=======
->>>>>>> 7bdaa72e8d4b94a3fa99ed357c5d891c3477da5d
 - **Behaviour**
-  - public Card createCard(Suit,Rank)
-  - public Hand assignCardToHand(List<Card>)
-  - public HandRank evaluateHandRanking(Hand hand)
+  - createCard: Creates a new card with specified suit and rank.
+  - assignCardToHand: Assigns a list of cards to a hand.
+  - evaluateHandRanking: Evaluates the hand ranking for a given hand.
+
