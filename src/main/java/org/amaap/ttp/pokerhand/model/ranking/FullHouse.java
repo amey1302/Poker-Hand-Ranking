@@ -1,4 +1,4 @@
-package org.amaap.ttp.pokerhand.model.domain.ranking;
+package org.amaap.ttp.pokerhand.model.ranking;
 
 import org.amaap.ttp.pokerhand.model.domain.Card;
 import org.amaap.ttp.pokerhand.model.domain.Hand;
@@ -9,17 +9,10 @@ import java.util.Map;
 
 import static org.amaap.ttp.pokerhand.model.domain.HandRankEvaluator.rankCount;
 
-public class TwoPair {
-    public static boolean isTwoPair(Hand hand){
+public class FullHouse {
+    public static boolean isFullHouse(Hand hand) {
         List<Card> cards = hand.getCards();
         Map<Rank, Integer> rankCount = rankCount(cards);
-        int pairCount = 0;
-        for (int count : rankCount.values()) {
-            if (count == 2) {
-                pairCount++;
-            }
-        }
-        return pairCount == 2;
-
+        return rankCount.containsValue(3) && rankCount.containsValue(2);
     }
 }

@@ -1,4 +1,4 @@
-package org.amaap.ttp.pokerhand.model.domain.ranking;
+package org.amaap.ttp.pokerhand.model.ranking;
 
 import org.amaap.ttp.pokerhand.model.builder.CardBuilder;
 import org.amaap.ttp.pokerhand.model.domain.Card;
@@ -13,15 +13,14 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FourOfAKindTest {
+class RoyalFlushTest {
     CardBuilder cardBuilder = new CardBuilder();
     @Test
-    void shouldBeAbleToReturnTheRankForFourOfAKind() throws InvalidCardException, InvalidHandCapacityException {
+    void shouldBeAbleToReturnTheRankForRoyalFlush() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
-        List<Card> cards = cardBuilder.getCardsForFourOfAKind();
-
+        List<Card> cards = cardBuilder.getCardsForRoyalFlush();
         Hand hand = Hand.create(cards);
-        HandRank expected = HandRank.FOUR_OF_A_KIND;
+        HandRank expected = HandRank.ROYAL_FLUSH;
 
         // act
         HandRank actual = HandRankEvaluator.evaluateRanking(hand);
@@ -29,5 +28,6 @@ class FourOfAKindTest {
         // assert
         assertEquals(expected, actual);
     }
+
 
 }

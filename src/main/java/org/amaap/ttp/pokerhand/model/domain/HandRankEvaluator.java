@@ -1,21 +1,19 @@
 package org.amaap.ttp.pokerhand.model.domain;
 
-import org.amaap.ttp.pokerhand.model.domain.*;
-
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.amaap.ttp.pokerhand.model.domain.ranking.Flush.isFlush;
-import static org.amaap.ttp.pokerhand.model.domain.ranking.FourOfAKind.isFourOfAKind;
-import static org.amaap.ttp.pokerhand.model.domain.ranking.FullHouse.isFullHouse;
-import static org.amaap.ttp.pokerhand.model.domain.ranking.Pair.isPair;
-import static org.amaap.ttp.pokerhand.model.domain.ranking.RoyalFlush.isRoyalFlush;
-import static org.amaap.ttp.pokerhand.model.domain.ranking.Straight.isStraight;
-import static org.amaap.ttp.pokerhand.model.domain.ranking.StraightFlush.isStraightFlush;
-import static org.amaap.ttp.pokerhand.model.domain.ranking.ThreeOfAKind.isThreeOfAKind;
-import static org.amaap.ttp.pokerhand.model.domain.ranking.TwoPair.isTwoPair;
+import static org.amaap.ttp.pokerhand.model.ranking.Flush.isFlush;
+import static org.amaap.ttp.pokerhand.model.ranking.FourOfAKind.isFourOfAKind;
+import static org.amaap.ttp.pokerhand.model.ranking.FullHouse.isFullHouse;
+import static org.amaap.ttp.pokerhand.model.ranking.Pair.isPair;
+import static org.amaap.ttp.pokerhand.model.ranking.RoyalFlush.isRoyalFlush;
+import static org.amaap.ttp.pokerhand.model.ranking.Straight.isStraight;
+import static org.amaap.ttp.pokerhand.model.ranking.StraightFlush.isStraightFlush;
+import static org.amaap.ttp.pokerhand.model.ranking.ThreeOfAKind.isThreeOfAKind;
+import static org.amaap.ttp.pokerhand.model.ranking.TwoPair.isTwoPair;
 
 public class HandRankEvaluator {
     public static HandRank evaluateRanking(Hand hand) {

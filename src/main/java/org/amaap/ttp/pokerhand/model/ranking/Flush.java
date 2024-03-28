@@ -1,4 +1,4 @@
-package org.amaap.ttp.pokerhand.model.domain.ranking;
+package org.amaap.ttp.pokerhand.model.ranking;
 
 import org.amaap.ttp.pokerhand.model.domain.Card;
 import org.amaap.ttp.pokerhand.model.domain.Hand;

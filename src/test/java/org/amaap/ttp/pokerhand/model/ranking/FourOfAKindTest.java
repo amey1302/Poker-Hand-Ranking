@@ -1,4 +1,4 @@
-package org.amaap.ttp.pokerhand.model.domain.ranking;
+package org.amaap.ttp.pokerhand.model.ranking;
 
 import org.amaap.ttp.pokerhand.model.builder.CardBuilder;
 import org.amaap.ttp.pokerhand.model.domain.Card;
@@ -13,15 +13,15 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TwoPairTest {
+class FourOfAKindTest {
     CardBuilder cardBuilder = new CardBuilder();
     @Test
-    void shouldBeAbleToReturnTheRankForTwoPair() throws InvalidCardException, InvalidHandCapacityException {
+    void shouldBeAbleToReturnTheRankForFourOfAKind() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
-        List<Card> cards = cardBuilder.getCardsForTwoPair();
+        List<Card> cards = cardBuilder.getCardsForFourOfAKind();
 
         Hand hand = Hand.create(cards);
-        HandRank expected = HandRank.TWO_PAIR;
+        HandRank expected = HandRank.FOUR_OF_A_KIND;
 
         // act
         HandRank actual = HandRankEvaluator.evaluateRanking(hand);

@@ -1,4 +1,4 @@
-package org.amaap.ttp.pokerhand.model.domain.ranking;
+package org.amaap.ttp.pokerhand.model.ranking;
 
 import org.amaap.ttp.pokerhand.model.domain.Card;
 import org.amaap.ttp.pokerhand.model.domain.Hand;
@@ -9,10 +9,12 @@ import java.util.Map;
 
 import static org.amaap.ttp.pokerhand.model.domain.HandRankEvaluator.rankCount;
 
-public class ThreeOfAKind {
-    public static boolean isThreeOfAKind(Hand hand) {
+public class FourOfAKind {
+    public static boolean isFourOfAKind(Hand hand){
         List<Card> cards = hand.getCards();
         Map<Rank, Integer> rankCount = rankCount(cards);
-        return rankCount.containsValue(3);
+        return rankCount.containsValue(4);
+
     }
+
 }

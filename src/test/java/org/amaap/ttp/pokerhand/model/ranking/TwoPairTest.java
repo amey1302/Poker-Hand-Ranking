@@ -1,4 +1,4 @@
-package org.amaap.ttp.pokerhand.model.domain.ranking;
+package org.amaap.ttp.pokerhand.model.ranking;
 
 import org.amaap.ttp.pokerhand.model.builder.CardBuilder;
 import org.amaap.ttp.pokerhand.model.domain.Card;
@@ -13,14 +13,15 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class RoyalFlushTest {
+class TwoPairTest {
     CardBuilder cardBuilder = new CardBuilder();
     @Test
-    void shouldBeAbleToReturnTheRankForRoyalFlush() throws InvalidCardException, InvalidHandCapacityException {
+    void shouldBeAbleToReturnTheRankForTwoPair() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
-        List<Card> cards = cardBuilder.getCardsForRoyalFlush();
+        List<Card> cards = cardBuilder.getCardsForTwoPair();
+
         Hand hand = Hand.create(cards);
-        HandRank expected = HandRank.ROYAL_FLUSH;
+        HandRank expected = HandRank.TWO_PAIR;
 
         // act
         HandRank actual = HandRankEvaluator.evaluateRanking(hand);
@@ -28,6 +29,5 @@ class RoyalFlushTest {
         // assert
         assertEquals(expected, actual);
     }
-
 
 }

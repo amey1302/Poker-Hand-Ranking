@@ -1,4 +1,4 @@
-package org.amaap.ttp.pokerhand.model.domain.ranking;
+package org.amaap.ttp.pokerhand.model.ranking;
 
 import org.amaap.ttp.pokerhand.model.builder.CardBuilder;
 import org.amaap.ttp.pokerhand.model.domain.Card;
@@ -13,15 +13,15 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FlushTest {
+class FullHouseTest {
     CardBuilder cardBuilder = new CardBuilder();
     @Test
-    void shouldBeAbleToReturnTheRankForFLUSH() throws InvalidCardException, InvalidHandCapacityException {
+    void shouldBeAbleToReturnTheRankForFullHouse() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
-        List<Card> cards = cardBuilder.getCardsForFlush();
+        List<Card> cards = cardBuilder.getCardsForFullHouse();
 
         Hand hand = Hand.create(cards);
-        HandRank expected = HandRank.FLUSH;
+        HandRank expected = HandRank.FULL_HOUSE;
 
         // act
         HandRank actual = HandRankEvaluator.evaluateRanking(hand);

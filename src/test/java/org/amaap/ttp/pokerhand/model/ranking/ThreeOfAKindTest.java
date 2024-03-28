@@ -1,4 +1,4 @@
-package org.amaap.ttp.pokerhand.model.domain.ranking;
+package org.amaap.ttp.pokerhand.model.ranking;
 
 import org.amaap.ttp.pokerhand.model.builder.CardBuilder;
 import org.amaap.ttp.pokerhand.model.domain.Card;
@@ -11,18 +11,17 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.amaap.ttp.pokerhand.model.domain.ranking.Pair.isPair;
 import static org.junit.jupiter.api.Assertions.*;
 
-class PairTest {
+class ThreeOfAKindTest {
     CardBuilder cardBuilder = new CardBuilder();
     @Test
-    void shouldBeAbleToReturnTheRankForPair() throws InvalidCardException, InvalidHandCapacityException {
+    void shouldBeAbleToReturnTheRankForThreeOfAKind() throws InvalidCardException,InvalidHandCapacityException {
         // arrange
-        List<Card> cards = cardBuilder.getCardsForPair();
+        List<Card> cards = cardBuilder.getCardsForThreeOfAKind();
 
         Hand hand = Hand.create(cards);
-        HandRank expected = HandRank.PAIR;
+        HandRank expected = HandRank.THREE_OF_A_KIND;
 
         // act
         HandRank actual = HandRankEvaluator.evaluateRanking(hand);
@@ -30,19 +29,6 @@ class PairTest {
         // assert
         assertEquals(expected, actual);
     }
-    @Test
-    void shouldBeAbleToReturnTrueForPairCardsWithPairInstance() throws InvalidCardException, InvalidHandCapacityException {
-         // arrange
-        List<Card> cards = cardBuilder.getCardsForPair();
 
-        Hand hand = Hand.create(cards);
-        HandRank expected = HandRank.PAIR;
-
-        // act
-        boolean actual = isPair(hand);
-
-        // assert
-        assertTrue(actual);
-    }
 
 }
