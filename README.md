@@ -33,6 +33,21 @@ For this, I have created the following classes:
 
 #### Model
 
+=======
+The high card rule should return the highest card as well. For example, the hand ["S2" "D5" "C7" "ST" "HA"] should return "high-card-ace".
+
+---
+
+## Solution
+
+For this, I have created the following classes:
+#### Overall Test Coverage Report
+![image](https://github.com/amey1302/Poker-Hand-Ranking/assets/114746925/50ede70e-b742-4e7e-b55c-2282a0bd0a61)
+
+---
+### Package: org.amaap.ttp.pokerhand
+---
+#### Model
 - **domain**
   - **Exception**: Contains all defined exceptions for data validations.
   - **validators**
@@ -80,7 +95,10 @@ For this, I have created the following classes:
       - boolean methods for all HandRankingCategories
 
 #### Class: PokerManager
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7bdaa72e8d4b94a3fa99ed357c5d891c3477da5d
 - **Behaviour**
   - public Card createCard(Suit,Rank)
   - public Hand assignCardToHand(List<Card>)
