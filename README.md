@@ -28,7 +28,8 @@ The high card rule should return the highest card as well. For example, the hand
 
 For this, I have created the following classes:
 #### Overall Test Coverage Report
-![Poker Hand Rankings](https://github.com/amey1302/Poker-Hand-Ranking/assets/114746925/ebd81e4a-7e03-444a-82dd-32067bf22171)
+![image](https://github.com/amey1302/Poker-Hand-Ranking/assets/114746925/50ede70e-b742-4e7e-b55c-2282a0bd0a61)
+
 ---
 ### Package: org.amaap.ttp.pokerhand
 ---
