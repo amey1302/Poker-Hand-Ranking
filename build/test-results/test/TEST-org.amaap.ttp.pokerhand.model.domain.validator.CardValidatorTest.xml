@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.amaap.ttp.pokerhand.model.domain.validator.CardValidatorTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-03-27T19:49:07" hostname="LAPTOP-205J7BQ6" time="0.036">
+<testsuite name="org.amaap.ttp.pokerhand.model.domain.validator.CardValidatorTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-03-28T17:33:01" hostname="LAPTOP-205J7BQ6" time="0.008">
   <properties/>
-  <testcase name="shouldBeAbleToCreateValidCardWhenSuitAndRankAreValidForAce()" classname="org.amaap.ttp.pokerhand.model.domain.validator.CardValidatorTest" time="0.028"/>
+  <testcase name="shouldBeAbleToCreateValidCardWhenSuitAndRankAreValidForAce()" classname="org.amaap.ttp.pokerhand.model.domain.validator.CardValidatorTest" time="0.001"/>
   <testcase name="shouldBeAbleToCreateValidCardWhenSuitAndRankAreValid()" classname="org.amaap.ttp.pokerhand.model.domain.validator.CardValidatorTest" time="0.001"/>
   <testcase name="shouldBeAbleToThrowInvalidSuitExceptionWhenSuitIsNull()" classname="org.amaap.ttp.pokerhand.model.domain.validator.CardValidatorTest" time="0.002"/>
   <testcase name="shouldBeAbleToThrowInvalidCardRankExceptionWhenRankIsNull()" classname="org.amaap.ttp.pokerhand.model.domain.validator.CardValidatorTest" time="0.001"/>

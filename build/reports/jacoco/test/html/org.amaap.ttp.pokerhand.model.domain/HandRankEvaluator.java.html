@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HandRankEvaluator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pocker-Hand-Ranking</a> &gt; <a href="index.source.html" class="el_package">org.amaap.ttp.pokerhand.model.domain</a> &gt; <span class="el_source">HandRankEvaluator.java</span></div><h1>HandRankEvaluator.java</h1><pre class="source lang-java linenums">package org.amaap.ttp.pokerhand.model.domain;
+
+import org.amaap.ttp.pokerhand.model.domain.*;
+
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static org.amaap.ttp.pokerhand.model.domain.ranking.Flush.isFlush;
+import static org.amaap.ttp.pokerhand.model.domain.ranking.FourOfAKind.isFourOfAKind;
+import static org.amaap.ttp.pokerhand.model.domain.ranking.FullHouse.isFullHouse;
+import static org.amaap.ttp.pokerhand.model.domain.ranking.Pair.isPair;
+import static org.amaap.ttp.pokerhand.model.domain.ranking.RoyalFlush.isRoyalFlush;
+import static org.amaap.ttp.pokerhand.model.domain.ranking.Straight.isStraight;
+import static org.amaap.ttp.pokerhand.model.domain.ranking.StraightFlush.isStraightFlush;
+import static org.amaap.ttp.pokerhand.model.domain.ranking.ThreeOfAKind.isThreeOfAKind;
+import static org.amaap.ttp.pokerhand.model.domain.ranking.TwoPair.isTwoPair;
+
+<span class="nc" id="L20">public class HandRankEvaluator {</span>
+    public static HandRank evaluateRanking(Hand hand) {
+<span class="fc" id="L22">        List&lt;Card&gt; cards = hand.getCards();</span>
+
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        if (isRoyalFlush(hand)) {</span>
+<span class="fc" id="L25">            return HandRank.ROYAL_FLUSH;</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        } else if (isStraightFlush(hand)) {</span>
+<span class="fc" id="L27">            return HandRank.STRAIGHT_FLUSH;</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">        } else if (isFourOfAKind(hand)) {</span>
+<span class="fc" id="L29">            return HandRank.FOUR_OF_A_KIND;</span>
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        } else if (isFullHouse(hand)) {</span>
+<span class="fc" id="L31">            return HandRank.FULL_HOUSE;</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">        } else if (isFlush(hand)) {</span>
+<span class="fc" id="L33">            return HandRank.FLUSH;</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        } else if (isStraight(hand)) {</span>
+<span class="fc" id="L35">            return HandRank.STRAIGHT;</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        } else if (isThreeOfAKind(hand)) {</span>
+<span class="fc" id="L37">            return HandRank.THREE_OF_A_KIND;</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">        } else if (isTwoPair(hand)) {</span>
+<span class="fc" id="L39">            return HandRank.TWO_PAIR;</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        } else if (isPair(hand)) {</span>
+<span class="fc" id="L41">            return HandRank.PAIR;</span>
+        } else {
+<span class="fc" id="L43">            cards.sort(Comparator.comparing(card -&gt; card.getRank()));</span>
+<span class="fc" id="L44">            Rank highestCard = cards.get(cards.size() - 1).getRank();</span>
+<span class="fc" id="L45">            return HandRank.HIGH_CARD.withHighestCard(highestCard);</span>
+        }
+    }
+    public static Map&lt;Rank, Integer&gt; rankCount(List&lt;Card&gt; cards) {
+<span class="fc" id="L49">        Map&lt;Rank, Integer&gt; rankCount = new HashMap&lt;&gt;();</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">        for (Card card : cards) {</span>
+<span class="fc" id="L51">            rankCount.put(card.getRank(), rankCount.getOrDefault(card.getRank(), 0) + 1);</span>
+<span class="fc" id="L52">        }</span>
+<span class="fc" id="L53">        return rankCount;</span>
+    }
+
+    public static Map&lt;Suit, Integer&gt; suitCount(List&lt;Card&gt; cards) {
+<span class="fc" id="L57">        Map&lt;Suit, Integer&gt; suitCount = new HashMap&lt;&gt;();</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        for (Card card : cards) {</span>
+<span class="fc" id="L59">            suitCount.put(card.getSuit(), suitCount.getOrDefault(card.getSuit(), 0) + 1);</span>
+<span class="fc" id="L60">        }</span>
+<span class="fc" id="L61">        return suitCount;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

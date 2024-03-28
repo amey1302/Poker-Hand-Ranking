@@ -4,41 +4,36 @@ import org.amaap.ttp.pokerhand.model.domain.exception.InvalidHandCapacityExcepti
 
 import java.util.List;
 
+import static org.amaap.ttp.pokerhand.model.domain.validator.HandValidator.isInvalidHandCapacity;
+
 public class Hand {
     private List&lt;Card&gt; cards;
 
-<span class="fc" id="L10">    private Hand(List&lt;Card&gt; cards) {</span>
-<span class="fc" id="L11">        this.cards = cards;</span>
-<span class="fc" id="L12">    }</span>
+<span class="fc" id="L12">    private Hand(List&lt;Card&gt; cards) {</span>
+<span class="fc" id="L13">        this.cards = cards;</span>
+<span class="fc" id="L14">    }</span>
 
     public static Hand create(List&lt;Card&gt; cards) throws InvalidHandCapacityException {
-<span class="fc bfc" id="L15" title="All 4 branches covered.">        if (cards == null || isInvalidHandCapacity(cards))</span>
-<span class="fc" id="L16">            throw new InvalidHandCapacityException(&quot;Hand should contains exactly five Cards&quot;);</span>
-<span class="fc" id="L17">        return new Hand(cards);</span>
-    }
-
-    private static boolean isInvalidHandCapacity(List&lt;Card&gt; cards) {
-<span class="fc bfc" id="L21" title="All 2 branches covered.">        return !isValidHandCapacity(cards);</span>
-    }
-
-    private static boolean isValidHandCapacity(List&lt;Card&gt; cards) {
-<span class="fc bfc" id="L25" title="All 2 branches covered.">        return cards.size() == 5 ;</span>
+<span class="fc bfc" id="L17" title="All 4 branches covered.">        if (cards == null || isInvalidHandCapacity(cards))</span>
+<span class="fc" id="L18">            throw new InvalidHandCapacityException(&quot;Hand should contains exactly five Cards&quot;);</span>
+<span class="fc" id="L19">        return new Hand(cards);</span>
     }
 
     public List&lt;Card&gt; getCards() {
-<span class="fc" id="L29">        return cards;</span>
+<span class="fc" id="L23">        return cards;</span>
     }
+
     public String getStringRepresentation() {
-<span class="fc" id="L32">        StringBuilder stringBuilder = new StringBuilder();</span>
-<span class="fc" id="L33">        stringBuilder.append(&quot;[&quot;);</span>
-<span class="fc bfc" id="L34" title="All 2 branches covered.">        for (Card card : cards) {</span>
-<span class="fc" id="L35">            stringBuilder.append(&quot;\&quot;&quot;).append(card.getSuit().getAbbreviation()).append(card.getRank().getAbbreviation()).append(&quot;\&quot; &quot;);</span>
-<span class="fc" id="L36">        }</span>
-<span class="pc bpc" id="L37" title="1 of 2 branches missed.">        if (stringBuilder.length() &gt; 0) {</span>
-<span class="fc" id="L38">            stringBuilder.setLength(stringBuilder.length() - 1);</span>
+<span class="fc" id="L27">        StringBuilder stringBuilder = new StringBuilder();</span>
+<span class="fc" id="L28">        stringBuilder.append(&quot;[&quot;);</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        for (Card card : cards) {</span>
+<span class="fc" id="L30">            stringBuilder.append(&quot;\&quot;&quot;).append(card.getSuit().getAbbreviation()).append(card.getRank().getAbbreviation()).append(&quot;\&quot; &quot;);</span>
+<span class="fc" id="L31">        }</span>
+<span class="pc bpc" id="L32" title="1 of 2 branches missed.">        if (stringBuilder.length() &gt; 0) {</span>
+<span class="fc" id="L33">            stringBuilder.setLength(stringBuilder.length() - 1);</span>
         }
-<span class="fc" id="L40">        stringBuilder.append(&quot;]&quot;);</span>
-<span class="fc" id="L41">        return stringBuilder.toString();</span>
+<span class="fc" id="L35">        stringBuilder.append(&quot;]&quot;);</span>
+<span class="fc" id="L36">        return stringBuilder.toString();</span>
     }
 
 }

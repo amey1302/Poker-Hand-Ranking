@@ -17,6 +17,7 @@ public class CardBuilder {
         cards.add(Card.create(Suit.DIAMOND, Rank.FOUR));
         cards.add(Card.create(Suit.SPADE, Rank.FIVE));
         cards.add(Card.create(Suit.CLUB, Rank.SIX));
+
         return cards;
     }
 

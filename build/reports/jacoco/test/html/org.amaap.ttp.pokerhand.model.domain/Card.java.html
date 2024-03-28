@@ -4,64 +4,50 @@ import org.amaap.ttp.pokerhand.model.domain.exception.InvalidCardException;
 import org.amaap.ttp.pokerhand.model.domain.exception.InvalidCardRankException;
 import org.amaap.ttp.pokerhand.model.domain.exception.InvalidSuitException;
 
-import java.util.EnumSet;
 import java.util.Objects;
+
+import static org.amaap.ttp.pokerhand.model.domain.validator.CardValidator.isInvalidCardRank;
+import static org.amaap.ttp.pokerhand.model.domain.validator.CardValidator.isInvalidCardSuit;
 
 public class Card {
     private Suit suit;
     private Rank rank;
 
-<span class="fc" id="L14">    private Card(Suit suit, Rank rank) {</span>
-<span class="fc" id="L15">        this.suit = suit;</span>
-<span class="fc" id="L16">        this.rank = rank;</span>
-<span class="fc" id="L17">    }</span>
+<span class="fc" id="L16">    private Card(Suit suit, Rank rank) {</span>
+<span class="fc" id="L17">        this.suit = suit;</span>
+<span class="fc" id="L18">        this.rank = rank;</span>
+<span class="fc" id="L19">    }</span>
 
     public static Card create(Suit suit, Rank rank) throws InvalidCardException {
-<span class="fc bfc" id="L20" title="All 2 branches covered.">        if (isInvalidCardSuit(suit)) throw new InvalidSuitException(&quot;The Suit is Invalid &quot; + suit);</span>
-<span class="fc bfc" id="L21" title="All 2 branches covered.">        if (isInvalidCardRank(rank)) throw new InvalidCardRankException(&quot;The Card Rank is Invalid &quot; + rank);</span>
-<span class="fc" id="L22">        return new Card(suit, rank);</span>
-    }
-
-    private static boolean isInvalidCardRank(Rank rank) {
-<span class="fc bfc" id="L26" title="All 2 branches covered.">        return !isValidCardRank(rank);</span>
-    }
-
-    private static boolean isValidCardRank(Rank rank) {
-<span class="fc" id="L30">        return EnumSet.allOf(Rank.class).contains(rank);</span>
-    }
-
-    private static boolean isInvalidCardSuit(Suit suit) {
-<span class="fc bfc" id="L34" title="All 2 branches covered.">        return !isValidCardSuit(suit);</span>
-    }
-
-    private static boolean isValidCardSuit(Suit suit) {
-<span class="fc" id="L38">        return EnumSet.allOf(Suit.class).contains(suit);</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">        if (isInvalidCardSuit(suit)) throw new InvalidSuitException(&quot;The Suit is Invalid &quot; + suit);</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (isInvalidCardRank(rank)) throw new InvalidCardRankException(&quot;The Card Rank is Invalid &quot; + rank);</span>
+<span class="fc" id="L24">        return new Card(suit, rank);</span>
     }
 
     @Override
     public boolean equals(Object o) {
-<span class="pc bpc" id="L43" title="1 of 2 branches missed.">        if (this == o) return true;</span>
-<span class="pc bpc" id="L44" title="2 of 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false;</span>
-<span class="fc" id="L45">        Card card = (Card) o;</span>
-<span class="pc bpc" id="L46" title="2 of 4 branches missed.">        return suit == card.suit &amp;&amp; rank == card.rank;</span>
+<span class="pc bpc" id="L29" title="1 of 2 branches missed.">        if (this == o) return true;</span>
+<span class="fc bfc" id="L30" title="All 4 branches covered.">        if (o == null || getClass() != o.getClass()) return false;</span>
+<span class="fc" id="L31">        Card card = (Card) o;</span>
+<span class="pc bpc" id="L32" title="1 of 4 branches missed.">        return suit == card.suit &amp;&amp; rank == card.rank;</span>
     }
 
     @Override
     public int hashCode() {
-<span class="nc" id="L51">        return Objects.hash(suit, rank);</span>
+<span class="fc" id="L37">        return Objects.hash(suit, rank);</span>
     }
 
     public Suit getSuit() {
-<span class="fc" id="L55">        return suit;</span>
+<span class="fc" id="L41">        return suit;</span>
     }
 
     public Rank getRank() {
-<span class="fc" id="L59">        return rank;</span>
+<span class="fc" id="L45">        return rank;</span>
     }
 
     @Override
     public String toString() {
-<span class="fc" id="L64">        return String.format(suit + &quot;_&quot; + rank);</span>
+<span class="fc" id="L50">        return String.format(suit + &quot;_&quot; + rank);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

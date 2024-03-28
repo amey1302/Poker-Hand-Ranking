@@ -5,11 +5,11 @@ import org.amaap.ttp.pokerhand.model.domain.exception.InvalidCardException;
 import org.amaap.ttp.pokerhand.model.domain.exception.InvalidHandCapacityException;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 class HandTest {
     CardBuilder cardBuilder = new CardBuilder();
@@ -58,4 +58,5 @@ class HandTest {
         // assert
         assertEquals(expected, actual);
     }
+
 }

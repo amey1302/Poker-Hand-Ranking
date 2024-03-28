@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.amaap.ttp.pokerhand.model.domain.ranking.TwoPairTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-03-28T17:33:01" hostname="LAPTOP-205J7BQ6" time="0.001">
+  <properties/>
+  <testcase name="shouldBeAbleToReturnTheRankForTwoPair()" classname="org.amaap.ttp.pokerhand.model.domain.ranking.TwoPairTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

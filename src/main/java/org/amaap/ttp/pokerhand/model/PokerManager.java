@@ -3,7 +3,7 @@ package org.amaap.ttp.pokerhand.model;
 import org.amaap.ttp.pokerhand.model.domain.*;
 import org.amaap.ttp.pokerhand.model.domain.exception.InvalidCardException;
 import org.amaap.ttp.pokerhand.model.domain.exception.InvalidHandCapacityException;
-import org.amaap.ttp.pokerhand.model.services.HandRankEvaluator;
+import org.amaap.ttp.pokerhand.model.domain.HandRankEvaluator;
 
 import java.util.List;
 
