@@ -92,7 +92,7 @@ For this, I have created the following classes:
   - **TwoPair**: Checks for a two pair hand.
   - **Pair**: Checks for a pair hand.
   - **HighCard**: Checks for a high card hand.
-
+  - 
 #### Class: PokerManager
 - **Behaviour**
   - createCard: Creates a new card with specified suit and rank.
