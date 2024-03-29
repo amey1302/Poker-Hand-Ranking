@@ -9,6 +9,12 @@ import org.amaap.ttp.pokerhand.domain.model.exception.InvalidCardException;
 import java.util.List;
 
 public class PokerManager {
+    private static PokerManager pokerManager;
+    public static synchronized PokerManager getInstance() {
+        if (pokerManager == null)
+            pokerManager = new PokerManager();
+        return pokerManager;
+    }
     public Card createCard(Suit suit, Rank rank) throws InvalidCardException {
         return Card.create(suit, rank);
     }

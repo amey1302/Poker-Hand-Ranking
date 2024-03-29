@@ -53,4 +53,13 @@ class HandRankEvaluatorTest {
         // assert
         assertEquals(expected, actual);
     }
+    @Test
+    void shouldBeAbleToReturnSingletonInstanceOfTheClass() {
+        //arrange
+        HandRankEvaluator handCategorizer1 = HandRankEvaluator.getInstance();
+        HandRankEvaluator handCategorizer2 = HandRankEvaluator.getInstance();
+
+        //act & assert
+        assertEquals(handCategorizer1,handCategorizer2);
+    }
 }

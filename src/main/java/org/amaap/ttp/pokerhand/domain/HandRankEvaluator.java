@@ -18,6 +18,12 @@ import static org.amaap.ttp.pokerhand.domain.ranking.ThreeOfAKind.isThreeOfAKind
 import static org.amaap.ttp.pokerhand.domain.ranking.TwoPair.isTwoPair;
 
 public class HandRankEvaluator {
+    private static HandRankEvaluator handRankEvaluator;
+    public static synchronized HandRankEvaluator getInstance() {
+        if (handRankEvaluator == null)
+            handRankEvaluator = new HandRankEvaluator();
+        return handRankEvaluator;
+    }
     public static HandRank evaluateRanking(Hand hand) {
         List<Card> cards = hand.getCards();
 

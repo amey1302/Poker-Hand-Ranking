@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.amaap.ttp.pokerhand.domain.PokerManagerTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2024-03-29T07:45:55" hostname="LAPTOP-205J7BQ6" time="0.019">
+<testsuite name="org.amaap.ttp.pokerhand.domain.PokerManagerTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2024-03-29T08:13:31" hostname="LAPTOP-205J7BQ6" time="0.06">
   <properties/>
-  <testcase name="shouldBedAbleToInitializePokerManagerToPerformOperations()" classname="org.amaap.ttp.pokerhand.domain.PokerManagerTest" time="0.001"/>
-  <testcase name="shouldBeAbleToCreateASingleCard()" classname="org.amaap.ttp.pokerhand.domain.PokerManagerTest" time="0.001"/>
+  <testcase name="shouldBeAbleToReturnSingletonInstanceOfTheClass()" classname="org.amaap.ttp.pokerhand.domain.PokerManagerTest" time="0.027"/>
+  <testcase name="shouldBedAbleToInitializePokerManagerToPerformOperations()" classname="org.amaap.ttp.pokerhand.domain.PokerManagerTest" time="0.002"/>
+  <testcase name="shouldBeAbleToCreateASingleCard()" classname="org.amaap.ttp.pokerhand.domain.PokerManagerTest" time="0.004"/>
   <testcase name="shouldBeAbleToThrowInvalidCardRankExceptionWhenCardRankIsInvalid()" classname="org.amaap.ttp.pokerhand.domain.PokerManagerTest" time="0.003"/>
-  <testcase name="shouldBeAbleToEvaluateHandAndReturnItsRanking()" classname="org.amaap.ttp.pokerhand.domain.PokerManagerTest" time="0.002"/>
+  <testcase name="shouldBeAbleToEvaluateHandAndReturnItsRanking()" classname="org.amaap.ttp.pokerhand.domain.PokerManagerTest" time="0.011"/>
   <testcase name="shouldBeAbleToAssignCardsToHand()" classname="org.amaap.ttp.pokerhand.domain.PokerManagerTest" time="0.001"/>
-  <testcase name="shouldBeAbleToThrowInvalidCardExceptionWhenCardInvalid()" classname="org.amaap.ttp.pokerhand.domain.PokerManagerTest" time="0.001"/>
+  <testcase name="shouldBeAbleToThrowInvalidCardExceptionWhenCardInvalid()" classname="org.amaap.ttp.pokerhand.domain.PokerManagerTest" time="0.002"/>
   <testcase name="shouldBeAbleToThrowInvalidSuitExceptionWhenSuitIsInvalid()" classname="org.amaap.ttp.pokerhand.domain.PokerManagerTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

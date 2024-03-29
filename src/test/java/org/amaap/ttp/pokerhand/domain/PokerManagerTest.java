@@ -23,6 +23,16 @@ public class PokerManagerTest {
     }
 
     @Test
+    void shouldBeAbleToReturnSingletonInstanceOfTheClass() {
+        //arrange
+        PokerManager pokerManager1 = PokerManager.getInstance();
+        PokerManager pokerManager2 = PokerManager.getInstance();
+
+        //act && assert
+        assertEquals(pokerManager1, pokerManager2);
+    }
+
+    @Test
     void shouldBeAbleToCreateASingleCard() throws InvalidCardException {
         // arrange
         Suit suit = Suit.CLUB;
