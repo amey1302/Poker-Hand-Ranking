@@ -14,6 +14,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HandValidatorTest {
     CardBuilder cardBuilder = new CardBuilder();
+    @Test
+    void shouldBeAbleToIntializeTheInstanceOfHandValidatorClass() {
+        // arrange
+        HandValidator actual = new HandValidator();
+
+        // act & assert
+        assertNotNull(actual);
+    }
 
     @Test
     void shouldBeAbleReturnTrueWhenHandCapacityIsFive() throws InvalidCardException {

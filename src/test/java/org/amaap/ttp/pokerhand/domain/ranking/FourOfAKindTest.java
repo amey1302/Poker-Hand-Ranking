@@ -11,10 +11,22 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static org.amaap.ttp.pokerhand.domain.ranking.FourOfAKind.isFourOfAKind;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FourOfAKindTest {
+
     CardBuilder cardBuilder = new CardBuilder();
+
+    @Test
+    void shouldBeAbleToIntializeTheInstanceOfFourOfAKindClass() {
+        // arrange
+        FourOfAKind actual = new FourOfAKind();
+
+        // act & assert
+        assertNotNull(actual);
+    }
+
     @Test
     void shouldBeAbleToReturnTheRankForFourOfAKind() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
@@ -28,6 +40,19 @@ class FourOfAKindTest {
 
         // assert
         assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldBeAbleToReturnFalseIfDifferentCardsPassedToIsFourOfAKind() throws InvalidCardException, InvalidHandCapacityException {
+        // arrange
+        List<Card> cards = cardBuilder.getCardsForTwoPair();
+        Hand hand = Hand.create(cards);
+
+        // act
+        boolean actual = isFourOfAKind(hand);
+
+        // assert
+        assertFalse(actual);
     }
 
 }

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Card.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pocker-Hand-Ranking</a> &gt; <a href="index.source.html" class="el_package">org.amaap.ttp.pokerhand.domain.model</a> &gt; <span class="el_source">Card.java</span></div><h1>Card.java</h1><pre class="source lang-java linenums">package org.amaap.ttp.pokerhand.domain.model;
+
+import org.amaap.ttp.pokerhand.domain.model.exception.InvalidCardException;
+import org.amaap.ttp.pokerhand.domain.model.exception.InvalidCardRankException;
+import org.amaap.ttp.pokerhand.domain.model.exception.InvalidSuitException;
+
+import java.util.Objects;
+
+import static org.amaap.ttp.pokerhand.domain.validator.CardValidator.isInvalidCardRank;
+import static org.amaap.ttp.pokerhand.domain.validator.CardValidator.isInvalidCardSuit;
+
+public class Card {
+    private Suit suit;
+    private Rank rank;
+
+<span class="fc" id="L16">    private Card(Suit suit, Rank rank) {</span>
+<span class="fc" id="L17">        this.suit = suit;</span>
+<span class="fc" id="L18">        this.rank = rank;</span>
+<span class="fc" id="L19">    }</span>
+
+    public static Card create(Suit suit, Rank rank) throws InvalidCardException {
+<span class="fc bfc" id="L22" title="All 2 branches covered.">        if (isInvalidCardSuit(suit)) throw new InvalidSuitException(&quot;The Suit is Invalid &quot; + suit);</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (isInvalidCardRank(rank)) throw new InvalidCardRankException(&quot;The Card Rank is Invalid &quot; + rank);</span>
+<span class="fc" id="L24">        return new Card(suit, rank);</span>
+    }
+
+    @Override
+    public boolean equals(Object o) {
+<span class="pc bpc" id="L29" title="1 of 2 branches missed.">        if (this == o) return true;</span>
+<span class="fc bfc" id="L30" title="All 4 branches covered.">        if (o == null || getClass() != o.getClass()) return false;</span>
+<span class="fc" id="L31">        Card card = (Card) o;</span>
+<span class="pc bpc" id="L32" title="1 of 4 branches missed.">        return suit == card.suit &amp;&amp; rank == card.rank;</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="fc" id="L37">        return Objects.hash(suit, rank);</span>
+    }
+
+    public Suit getSuit() {
+<span class="fc" id="L41">        return suit;</span>
+    }
+
+    public Rank getRank() {
+<span class="fc" id="L45">        return rank;</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="fc" id="L50">        return String.format(suit + &quot;_&quot; + rank);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -8,10 +8,17 @@ import org.amaap.ttp.pokerhand.domain.model.exception.InvalidSuitException;
 import org.amaap.ttp.pokerhand.domain.model.Rank;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 class CardValidatorTest {
+    @Test
+    void shouldBeAbleToIntializeTheInstanceOfCardValidator() {
+        // arrange
+        CardValidator actual = new CardValidator();
+
+        // act & assert
+        assertNotNull(actual);
+    }
 
     @Test
     void shouldBeAbleToThrowInvalidSuitExceptionWhenSuitIsNull() {

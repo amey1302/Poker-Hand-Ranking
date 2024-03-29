@@ -11,10 +11,21 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static org.amaap.ttp.pokerhand.domain.ranking.StraightFlush.isStraightFlush;
 import static org.junit.jupiter.api.Assertions.*;
 
 class StraightFlushTest {
     CardBuilder cardBuilder = new CardBuilder();
+
+    @Test
+    void shouldBeAbleToIntializeTheInstanceOfStraightFlushClass() {
+        // arrange
+        StraightFlush actual = new StraightFlush();
+
+        // act & assert
+        assertNotNull(actual);
+    }
+
     @Test
     void shouldBeAbleToReturnTheRankForStraightFlush() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
@@ -30,4 +41,16 @@ class StraightFlushTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void shouldBeAbleToReturnFalseIfDifferentCardsPassedToIsStraightFlush() throws InvalidCardException, InvalidHandCapacityException {
+        // arrange
+        List<Card> cards = cardBuilder.getCardsForTwoPair();
+        Hand hand = Hand.create(cards);
+
+        // act
+        boolean actual = isStraightFlush(hand);
+
+        // assert
+        assertFalse(actual);
+    }
 }

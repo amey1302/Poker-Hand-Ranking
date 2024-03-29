@@ -11,10 +11,21 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static org.amaap.ttp.pokerhand.domain.ranking.RoyalFlush.isRoyalFlush;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RoyalFlushTest {
     CardBuilder cardBuilder = new CardBuilder();
+
+    @Test
+    void shouldBeAbleToIntializeTheInstanceOfRoyalFlushClass() {
+        // arrange
+        RoyalFlush actual = new RoyalFlush();
+
+        // act & assert
+        assertNotNull(actual);
+    }
+
     @Test
     void shouldBeAbleToReturnTheRankForRoyalFlush() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
@@ -29,5 +40,16 @@ class RoyalFlushTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void shouldBeAbleToReturnFalseIfDifferentCardsPassedToIsRoyalFlush() throws InvalidCardException, InvalidHandCapacityException {
+        // arrange
+        List<Card> cards = cardBuilder.getCardsForHighCard();
+        Hand hand = Hand.create(cards);
 
+        // act
+        boolean actual = isRoyalFlush(hand);
+
+        // assert
+        assertFalse(actual);
+    }
 }

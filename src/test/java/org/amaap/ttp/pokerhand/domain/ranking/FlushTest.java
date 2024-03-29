@@ -11,10 +11,22 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static org.amaap.ttp.pokerhand.domain.ranking.Flush.isFlush;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FlushTest {
+
     CardBuilder cardBuilder = new CardBuilder();
+
+    @Test
+    void shouldBeAbleToIntializeTheInstanceOfFlushClass() {
+        // arrange
+        Flush actual = new Flush();
+
+        // act & assert
+        assertNotNull(actual);
+    }
+
     @Test
     void shouldBeAbleToReturnTheRankForFLUSH() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
@@ -28,6 +40,19 @@ class FlushTest {
 
         // assert
         assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldBeAbleToReturnFalseIfDifferentCardsPassedToIsFlush() throws InvalidCardException, InvalidHandCapacityException {
+        // arrange
+        List<Card> cards = cardBuilder.getCardsForTwoPair();
+        Hand hand = Hand.create(cards);
+
+        // act
+        boolean actual = isFlush(hand);
+
+        // assert
+        assertFalse(actual);
     }
 
 }

@@ -11,10 +11,21 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static org.amaap.ttp.pokerhand.domain.ranking.FullHouse.isFullHouse;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FullHouseTest {
     CardBuilder cardBuilder = new CardBuilder();
+
+    @Test
+    void shouldBeAbleToIntializeTheInstanceOfFullHouseClass() {
+        // arrange
+        FullHouse actual = new FullHouse();
+
+        // act & assert
+        assertNotNull(actual);
+    }
+
     @Test
     void shouldBeAbleToReturnTheRankForFullHouse() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
@@ -28,6 +39,19 @@ class FullHouseTest {
 
         // assert
         assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldBeAbleToReturnFalseIfDifferentCardsPassedToIsFullHouse() throws InvalidCardException, InvalidHandCapacityException {
+        // arrange
+        List<Card> cards = cardBuilder.getCardsForFourOfAKind();
+        Hand hand = Hand.create(cards);
+
+        // act
+        boolean actual = isFullHouse(hand);
+
+        // assert
+        assertFalse(actual);
     }
 
 }

@@ -11,10 +11,21 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static org.amaap.ttp.pokerhand.domain.ranking.ThreeOfAKind.isThreeOfAKind;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ThreeOfAKindTest {
     CardBuilder cardBuilder = new CardBuilder();
+
+    @Test
+    void shouldBeAbleToIntializeTheInstanceOfThreeOfAKindClass() {
+        // arrange
+        ThreeOfAKind actual = new ThreeOfAKind();
+
+        // act & assert
+        assertNotNull(actual);
+    }
+
     @Test
     void shouldBeAbleToReturnTheRankForThreeOfAKind() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
@@ -30,5 +41,16 @@ class ThreeOfAKindTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void shouldBeAbleToReturnFalseIfDifferentCardsPassedToIsThreeOfAKind() throws InvalidCardException, InvalidHandCapacityException {
+        // arrange
+        List<Card> cards = cardBuilder.getCardsForTwoPair();
+        Hand hand = Hand.create(cards);
 
+        // act
+        boolean actual = isThreeOfAKind(hand);
+
+        // assert
+        assertFalse(actual);
+    }
 }

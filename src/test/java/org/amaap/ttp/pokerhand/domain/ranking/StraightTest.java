@@ -11,10 +11,21 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static org.amaap.ttp.pokerhand.domain.ranking.Straight.isStraight;
 import static org.junit.jupiter.api.Assertions.*;
 
 class StraightTest {
     CardBuilder cardBuilder = new CardBuilder();
+
+    @Test
+    void shouldBeAbleToIntializeTheInstanceOfStraightClass() {
+        // arrange
+        Straight straight = new Straight();
+
+        // act & assert
+        assertNotNull(straight);
+    }
+
     @Test
     void shouldBeAbleToReturnTheRankForStraight() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
@@ -30,4 +41,16 @@ class StraightTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void shouldBeAbleToReturnFalseIfDifferentCardsPassedToIsStraight() throws InvalidCardException, InvalidHandCapacityException {
+        // arrange
+        List<Card> cards = cardBuilder.getCardsForTwoPair();
+        Hand hand = Hand.create(cards);
+
+        // act
+        boolean actual = isStraight(hand);
+
+        // assert
+        assertFalse(actual);
+    }
 }

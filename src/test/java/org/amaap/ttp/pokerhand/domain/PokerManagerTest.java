@@ -1,13 +1,11 @@
 package org.amaap.ttp.pokerhand.domain;
 
-import org.amaap.ttp.pokerhand.domain.model.exception.InvalidHandCapacityException;
-import org.amaap.ttp.pokerhand.domain.model.exception.InvalidSuitException;
 import org.amaap.ttp.pokerhand.domain.builder.CardBuilder;
-import org.amaap.ttp.pokerhand.domain.domain.model.model.*;
 import org.amaap.ttp.pokerhand.domain.model.*;
-import org.amaap.ttp.pokerhand.model.domain.*;
 import org.amaap.ttp.pokerhand.domain.model.exception.InvalidCardException;
 import org.amaap.ttp.pokerhand.domain.model.exception.InvalidCardRankException;
+import org.amaap.ttp.pokerhand.domain.model.exception.InvalidHandCapacityException;
+import org.amaap.ttp.pokerhand.domain.model.exception.InvalidSuitException;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -19,7 +17,7 @@ public class PokerManagerTest {
     PokerManager pokerManager = new PokerManager();
 
     @Test
-    void shouldAbleToInitializePokerManagerToPerformOperations() {
+    void shouldBedAbleToInitializePokerManagerToPerformOperations() {
         // assert
         assertNotNull(pokerManager);
     }
@@ -54,7 +52,7 @@ public class PokerManagerTest {
         Suit suit = Suit.CLUB;
 
         // assert
-         assertThrows(InvalidCardRankException.class, () -> pokerManager.createCard(suit, null));
+        assertThrows(InvalidCardRankException.class, () -> pokerManager.createCard(suit, null));
     }
 
     @Test
