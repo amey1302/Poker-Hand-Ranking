@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.amaap.ttp.pokerhand.domain.model.validator.CardValidatorTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-03-29T12:30:37" hostname="LAPTOP-205J7BQ6" time="0.008">
+  <properties/>
+  <testcase name="shouldBeAbleToCreateValidCardWhenSuitAndRankAreValidForAce()" classname="org.amaap.ttp.pokerhand.domain.model.validator.CardValidatorTest" time="0.001"/>
+  <testcase name="shouldBeAbleToCreateValidCardWhenSuitAndRankAreValid()" classname="org.amaap.ttp.pokerhand.domain.model.validator.CardValidatorTest" time="0.0"/>
+  <testcase name="shouldBeAbleToIntializeTheInstanceOfCardValidator()" classname="org.amaap.ttp.pokerhand.domain.model.validator.CardValidatorTest" time="0.001"/>
+  <testcase name="shouldBeAbleToThrowInvalidSuitExceptionWhenSuitIsNull()" classname="org.amaap.ttp.pokerhand.domain.model.validator.CardValidatorTest" time="0.002"/>
+  <testcase name="shouldBeAbleToThrowInvalidCardRankExceptionWhenRankIsNull()" classname="org.amaap.ttp.pokerhand.domain.model.validator.CardValidatorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

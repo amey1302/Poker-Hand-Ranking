@@ -1,4 +1,4 @@
-package org.amaap.ttp.pokerhand.domain.validator;
+package org.amaap.ttp.pokerhand.domain.model.validator;
 
 import org.amaap.ttp.pokerhand.domain.model.Card;
 import org.amaap.ttp.pokerhand.domain.model.Suit;
@@ -6,6 +6,7 @@ import org.amaap.ttp.pokerhand.domain.model.exception.InvalidCardException;
 import org.amaap.ttp.pokerhand.domain.model.exception.InvalidCardRankException;
 import org.amaap.ttp.pokerhand.domain.model.exception.InvalidSuitException;
 import org.amaap.ttp.pokerhand.domain.model.Rank;
+import org.amaap.ttp.pokerhand.domain.model.validator.CardValidator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -38,6 +39,7 @@ class CardValidatorTest {
         // Act & Assert
         Throwable exception = assertThrows(InvalidCardRankException.class, () -> Card.create(Suit.HEART, null));
         assertEquals(expectedExceptionMessage, exception.getMessage());
+
     }
 
     @Test

@@ -6,8 +6,8 @@ import org.amaap.ttp.pokerhand.domain.model.exception.InvalidSuitException;
 
 import java.util.Objects;
 
-import static org.amaap.ttp.pokerhand.domain.validator.CardValidator.isInvalidCardRank;
-import static org.amaap.ttp.pokerhand.domain.validator.CardValidator.isInvalidCardSuit;
+import static org.amaap.ttp.pokerhand.domain.model.validator.CardValidator.isInvalidCardRank;
+import static org.amaap.ttp.pokerhand.domain.model.validator.CardValidator.isInvalidCardSuit;
 
 public class Card {
     private Suit suit;

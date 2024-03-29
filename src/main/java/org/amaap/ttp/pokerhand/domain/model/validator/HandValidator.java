@@ -1,4 +1,4 @@
-package org.amaap.ttp.pokerhand.domain.validator;
+package org.amaap.ttp.pokerhand.domain.model.validator;
 
 import org.amaap.ttp.pokerhand.domain.model.Card;
 

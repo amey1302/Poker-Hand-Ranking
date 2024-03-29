@@ -1,6 +1,5 @@
 package org.amaap.ttp.pokerhand.domain.ranking;
 
-import org.amaap.ttp.pokerhand.domain.model.Card;
 import org.amaap.ttp.pokerhand.domain.model.exception.InvalidHandCapacityException;
 import org.amaap.ttp.pokerhand.domain.builder.CardBuilder;
 import org.amaap.ttp.pokerhand.domain.model.Hand;
@@ -9,6 +8,7 @@ import org.amaap.ttp.pokerhand.domain.HandRankEvaluator;
 import org.amaap.ttp.pokerhand.domain.model.exception.InvalidCardException;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.amaap.ttp.pokerhand.domain.ranking.FullHouse.isFullHouse;
@@ -29,7 +29,7 @@ class FullHouseTest {
     @Test
     void shouldBeAbleToReturnTheRankForFullHouse() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
-        List<Card> cards = cardBuilder.getCardsForFullHouse();
+        List<String> cards = Arrays.asList("HQ","SQ","CQ","H3","C3");
 
         Hand hand = Hand.create(cards);
         HandRank expected = HandRank.FULL_HOUSE;
@@ -44,7 +44,7 @@ class FullHouseTest {
     @Test
     void shouldBeAbleToReturnFalseIfDifferentCardsPassedToIsFullHouse() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
-        List<Card> cards = cardBuilder.getCardsForFourOfAKind();
+        List<String> cards = Arrays.asList("HQ","S2","CQ","H3","C3");
         Hand hand = Hand.create(cards);
 
         // act

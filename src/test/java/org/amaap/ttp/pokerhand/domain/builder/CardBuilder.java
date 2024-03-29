@@ -6,10 +6,12 @@ import org.amaap.ttp.pokerhand.domain.model.exception.InvalidCardException;
 import org.amaap.ttp.pokerhand.domain.model.Rank;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CardBuilder {
     List<Card> cards = new ArrayList<>();
+    List<String> stringList = new ArrayList<>();
 
     public List<Card> getCards() throws InvalidCardException {
         cards.add(Card.create(Suit.CLUB, Rank.TWO));
@@ -17,7 +19,6 @@ public class CardBuilder {
         cards.add(Card.create(Suit.DIAMOND, Rank.FOUR));
         cards.add(Card.create(Suit.SPADE, Rank.FIVE));
         cards.add(Card.create(Suit.CLUB, Rank.SIX));
-
         return cards;
     }
 
@@ -28,6 +29,10 @@ public class CardBuilder {
         cards.add(Card.create(Suit.HEART, Rank.QUEEN));
         cards.add(Card.create(Suit.CLUB, Rank.KING));
         return cards;
+    }
+    public List<String> getRandom() throws InvalidCardException {
+        Arrays.asList( "HA","H2","H3","H4","H5");
+        return stringList;
     }
 
     public List<Card> getCardsForRoyalFlush() throws InvalidCardException {
@@ -119,6 +124,4 @@ public class CardBuilder {
         cards.add(Card.create(Suit.CLUB, Rank.TWO));
         return cards;
     }
-
-
 }

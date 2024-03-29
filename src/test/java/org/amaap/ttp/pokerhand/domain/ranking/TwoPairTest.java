@@ -2,13 +2,13 @@ package org.amaap.ttp.pokerhand.domain.ranking;
 
 import org.amaap.ttp.pokerhand.domain.HandRankEvaluator;
 import org.amaap.ttp.pokerhand.domain.builder.CardBuilder;
-import org.amaap.ttp.pokerhand.domain.model.Card;
 import org.amaap.ttp.pokerhand.domain.model.Hand;
 import org.amaap.ttp.pokerhand.domain.model.HandRank;
 import org.amaap.ttp.pokerhand.domain.model.exception.InvalidCardException;
 import org.amaap.ttp.pokerhand.domain.model.exception.InvalidHandCapacityException;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.amaap.ttp.pokerhand.domain.ranking.TwoPair.isTwoPair;
@@ -29,8 +29,7 @@ class TwoPairTest {
     @Test
     void shouldBeAbleToReturnTheRankForTwoPair() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
-        List<Card> cards = cardBuilder.getCardsForTwoPair();
-
+        List<String> cards = Arrays.asList("HQ", "S3", "DQ", "HA", "C3");
         Hand hand = Hand.create(cards);
         HandRank expected = HandRank.TWO_PAIR;
 
@@ -40,11 +39,22 @@ class TwoPairTest {
         // assert
         assertEquals(expected, actual);
     }
+    @Test
+    void shouldBeAbleToReturnTrueIfCardsPassedToIsTwoPair() throws InvalidCardException, InvalidHandCapacityException {
+        // arrange
+        List<String> cards = Arrays.asList("S2", "D2", "DQ", "H5", "C5");
+        Hand hand = Hand.create(cards);
 
+        // act
+        boolean actual = isTwoPair(hand);
+
+        // assert
+        assertTrue(actual);
+    }
     @Test
     void shouldBeAbleToReturnFalseIfDifferentCardsPassedToIsTwoPair() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
-        List<Card> cards = cardBuilder.getCardsForHighCard();
+        List<String> cards = Arrays.asList("HQ", "S3", "DQ", "CA", "C4");
         Hand hand = Hand.create(cards);
 
         // act

@@ -3,14 +3,14 @@ package org.amaap.ttp.pokerhand.domain.model;
 public enum Suit {
     SPADE("S"), HEART("H"), CLUB("C"), DIAMOND("D");
 
-    private final String abbreviation;
+    private final String keyword;
 
-    Suit(String abbreviation) {
-        this.abbreviation = abbreviation;
+    Suit(String keyword) {
+        this.keyword = keyword;
     }
 
-    public String getAbbreviation() {
-        return abbreviation;
+    public String getKeyword() {
+        return keyword;
     }
 }
 

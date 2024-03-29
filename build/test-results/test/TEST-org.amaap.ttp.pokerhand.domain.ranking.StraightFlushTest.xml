@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.amaap.ttp.pokerhand.domain.ranking.StraightFlushTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-03-29T12:30:37" hostname="LAPTOP-205J7BQ6" time="0.002">
+  <properties/>
+  <testcase name="shouldBeAbleToReturnFalseIfDifferentCardsPassedToIsStraightFlush()" classname="org.amaap.ttp.pokerhand.domain.ranking.StraightFlushTest" time="0.0"/>
+  <testcase name="shouldBeAbleToReturnTheRankForStraightFlush()" classname="org.amaap.ttp.pokerhand.domain.ranking.StraightFlushTest" time="0.0"/>
+  <testcase name="shouldBeAbleToIntializeTheInstanceOfStraightFlushClass()" classname="org.amaap.ttp.pokerhand.domain.ranking.StraightFlushTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

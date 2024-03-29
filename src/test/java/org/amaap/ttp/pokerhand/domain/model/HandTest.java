@@ -3,12 +3,9 @@ package org.amaap.ttp.pokerhand.domain.model;
 import org.amaap.ttp.pokerhand.domain.model.exception.InvalidHandCapacityException;
 import org.amaap.ttp.pokerhand.domain.builder.CardBuilder;
 import org.amaap.ttp.pokerhand.domain.model.exception.InvalidCardException;
-import org.amaap.ttp.pokerhand.domain.model.Card;
-import org.amaap.ttp.pokerhand.domain.model.Hand;
-import org.amaap.ttp.pokerhand.domain.model.Rank;
-import org.amaap.ttp.pokerhand.domain.model.Suit;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,21 +17,26 @@ class HandTest {
     @Test
     void shouldBeAbleToCreateHandWhenFiveCardArePassed() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
-        List<Card> cards = cardBuilder.getCards();
+        List<String> cards = Arrays.asList("HQ", "S3", "DQ", "HA", "C3");
+        List<String> expectedCardStrings = cards.stream()
+                .map(card -> String.valueOf(card.charAt(0)) + String.valueOf(card.charAt(1)).toUpperCase())
+                .collect(Collectors.toList());
 
         // act
         Hand actual = Hand.create(cards);
+        List<String> actualCardStrings = actual.getCards().stream()
+                .map(card -> card.getSuit().getKeyword() + card.getRank().getAbbreviation())
+                .collect(Collectors.toList());
 
         // assert
-        assertEquals(cards, actual.getCards());
+        assertEquals(expectedCardStrings, actualCardStrings);
 
     }
 
     @Test
     void shouldBeAbleToThrowInvalidHandCapacityExceptionWhenHandCapacityIsInvalid() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
-        List<Card> cards = cardBuilder.getCards();
-        cards.add(Card.create(Suit.HEART, Rank.ACE));
+        List<String> cards = Arrays.asList("HQ", "S3", "DQ", "HA", "C3","C7");
 
         // act & assert
         assertThrows(InvalidHandCapacityException.class, () -> Hand.create(cards));
@@ -49,10 +51,10 @@ class HandTest {
     @Test
     void shouldBeAbleGetStringRepresentationOfHand() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
-        List<Card> cards = cardBuilder.getRandomCards();
+        List<String> cards = Arrays.asList("H3","H4","H5","H6","H7");
         Hand hand = Hand.create(cards);
         String expected = "[" + hand.getCards().stream()
-                .map(card -> "\"" + card.getSuit().getAbbreviation() + card.getRank().getAbbreviation() + "\"")
+                .map(card -> "\"" + card.getSuit().getKeyword() + card.getRank().getAbbreviation() + "\"")
                 .collect(Collectors.joining(" ")) + "]";
 
         // act
@@ -60,6 +62,25 @@ class HandTest {
 
         // assert
         assertEquals(expected, actual);
+    }
+    @Test
+    void shouldBeAbleToCreateHandFromSymbols() throws InvalidCardException, InvalidHandCapacityException {
+        // arrange
+        List<String> symbols = Arrays.asList("S2", "D5", "C7", "ST", "HA");
+        List<Card> expectedCards = Arrays.asList(
+                Card.create(Suit.SPADE, Rank.TWO),
+                Card.create(Suit.DIAMOND, Rank.FIVE),
+                Card.create(Suit.CLUB, Rank.SEVEN),
+                Card.create(Suit.SPADE, Rank.TEN),
+                Card.create(Suit.HEART, Rank.ACE)
+        );
+
+        // act
+        Hand hand = Hand.create(symbols);
+        List<Card> actualCards = hand.getCards();
+
+        // assert
+        assertEquals(expectedCards, actualCards);
     }
 
 }

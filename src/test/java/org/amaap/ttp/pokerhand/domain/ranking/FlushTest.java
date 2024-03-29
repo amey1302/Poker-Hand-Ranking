@@ -1,6 +1,5 @@
 package org.amaap.ttp.pokerhand.domain.ranking;
 
-import org.amaap.ttp.pokerhand.domain.model.Card;
 import org.amaap.ttp.pokerhand.domain.model.exception.InvalidHandCapacityException;
 import org.amaap.ttp.pokerhand.domain.builder.CardBuilder;
 import org.amaap.ttp.pokerhand.domain.model.Hand;
@@ -9,6 +8,7 @@ import org.amaap.ttp.pokerhand.domain.HandRankEvaluator;
 import org.amaap.ttp.pokerhand.domain.model.exception.InvalidCardException;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.amaap.ttp.pokerhand.domain.ranking.Flush.isFlush;
@@ -30,8 +30,7 @@ class FlushTest {
     @Test
     void shouldBeAbleToReturnTheRankForFLUSH() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
-        List<Card> cards = cardBuilder.getCardsForFlush();
-
+        List<String> cards = Arrays.asList("HA","H2","H3","H4","H5");
         Hand hand = Hand.create(cards);
         HandRank expected = HandRank.FLUSH;
 
@@ -45,7 +44,7 @@ class FlushTest {
     @Test
     void shouldBeAbleToReturnFalseIfDifferentCardsPassedToIsFlush() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
-        List<Card> cards = cardBuilder.getCardsForTwoPair();
+        List<String> cards = Arrays.asList("HQ","SQ","CQ","H3","C3");
         Hand hand = Hand.create(cards);
 
         // act

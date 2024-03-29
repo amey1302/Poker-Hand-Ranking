@@ -1,10 +1,11 @@
-package org.amaap.ttp.pokerhand.domain.validator;
+package org.amaap.ttp.pokerhand.domain.model.validator;
 
 import org.amaap.ttp.pokerhand.domain.model.Card;
 import org.amaap.ttp.pokerhand.domain.model.Suit;
 import org.amaap.ttp.pokerhand.domain.builder.CardBuilder;
 import org.amaap.ttp.pokerhand.domain.model.Rank;
 import org.amaap.ttp.pokerhand.domain.model.exception.InvalidCardException;
+import org.amaap.ttp.pokerhand.domain.model.validator.HandValidator;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
