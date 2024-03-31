@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.FlushTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-03-31T16:44:49" hostname="LAPTOP-205J7BQ6" time="0.005">
+<testsuite name="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.FlushTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-03-31T17:02:59" hostname="LAPTOP-205J7BQ6" time="0.005">
   <properties/>
-  <testcase name="shouldBeAbleToReturnFalseIfDifferentCardsPassedToIsFlush()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.FlushTest" time="0.001"/>
+  <testcase name="shouldBeAbleToReturnFalseIfDifferentCardsPassedToIsFlush()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.FlushTest" time="0.002"/>
   <testcase name="shouldBeAbleToIntializeTheInstanceOfFlushClass()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.FlushTest" time="0.001"/>
   <testcase name="shouldBeAbleToReturnTheRankForFLUSH()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.FlushTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>

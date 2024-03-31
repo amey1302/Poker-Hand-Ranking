@@ -1,11 +1,19 @@
 package org.amaap.ttp.pokerhandrankingpair.version1.domain;
 
 import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.*;
-import org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.*;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.Flush.isFlush;
+import static org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.FourOfKind.isFourOfKind;
+import static org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.FullHouse.isFullHouse;
+import static org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.RoyalFlush.isRoyalFlush;
+import static org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.Straight.isStraight;
+import static org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.StraightFlush.isStraightFlush;
+import static org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.ThreeOfKind.isThreeOfKind;
+import static org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.TwoPair.isTwoPair;
 
 public class HandRankEvaluator {
     private static HandRankEvaluator handRankEvaluator;
@@ -17,22 +25,24 @@ public class HandRankEvaluator {
     }
 
     public static HandRank evaluateRanking(Hand hand) {
-        if (RoyalFlush.isRoyalFlush(hand)) {
+        if (isRoyalFlush(hand)) {
             return HandRank.ROYAL_FLUSH;
-        } else if (StraightFlush.isStraightFlush(hand)) {
+        } else if (isStraightFlush(hand)) {
             return HandRank.STRAIGHT_FLUSH;
-        } else if (Straight.isStraight(hand)) {
-            return HandRank.STRAIGHT;
-        } else if (TwoPair.isTwoPair(hand)) {
-            return HandRank.TWO_PAIR;
-        } else if (Flush.isFlush(hand)) {
-            return HandRank.FLUSH;
-        } else if (FourOfKind.isFourOfKind(hand)) {
+        } else if (isFourOfKind(hand)) {
             return HandRank.FOUR_OF_A_KIND;
-        }else if (ThreeOfKind.isThreeOfKind(hand)) {
+        } else if (isFullHouse(hand)) {
+            return HandRank.FULL_HOUSE;
+        } else if (isFlush(hand)) {
+            return HandRank.FLUSH;
+        } else if (isStraight(hand)) {
+            return HandRank.STRAIGHT;
+        } else if (isThreeOfKind(hand)) {
             return HandRank.THREE_OF_A_KIND;
-        }
-        return HandRank.PAIR;
+        } else if (isTwoPair(hand)) {
+            return HandRank.TWO_PAIR;
+        } else
+            return HandRank.PAIR;
 
     }
 
