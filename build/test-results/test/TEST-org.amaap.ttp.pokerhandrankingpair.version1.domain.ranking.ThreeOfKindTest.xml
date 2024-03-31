@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.ThreeOfKindTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-03-31T18:20:53" hostname="LAPTOP-205J7BQ6" time="0.004">
+<testsuite name="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.ThreeOfKindTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-03-31T18:25:42" hostname="LAPTOP-205J7BQ6" time="0.006">
   <properties/>
-  <testcase name="shouldBeAbleToIntializeTheInstanceOfThreeOfAKindClass()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.ThreeOfKindTest" time="0.001"/>
-  <testcase name="shouldBeAbleToReturnFalseIfDifferentCardsPassedToIsThreeOfAKind()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.ThreeOfKindTest" time="0.0"/>
-  <testcase name="shouldBeAbleToReturnTrueIfCardsPassedToIsThreeOfAKind()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.ThreeOfKindTest" time="0.0"/>
-  <testcase name="shouldBeAbleToReturnTheRankForThreeOfAKind()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.ThreeOfKindTest" time="0.001"/>
+  <testcase name="shouldBeAbleToIntializeTheInstanceOfThreeOfAKindClass()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.ThreeOfKindTest" time="0.0"/>
+  <testcase name="shouldBeAbleToReturnFalseIfDifferentCardsPassedToIsThreeOfAKind()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.ThreeOfKindTest" time="0.001"/>
+  <testcase name="shouldBeAbleToReturnTrueIfCardsPassedToIsThreeOfAKind()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.ThreeOfKindTest" time="0.002"/>
+  <testcase name="shouldBeAbleToReturnTheRankForThreeOfAKind()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.ThreeOfKindTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -8,16 +8,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.Flush.isFlush;
-import static org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.FourOfKind.isFourOfKind;
-import static org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.FullHouse.isFullHouse;
-import static org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.Pair.isPair;
-import static org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.RoyalFlush.isRoyalFlush;
-import static org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.Straight.isStraight;
-import static org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.StraightFlush.isStraightFlush;
-import static org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.ThreeOfKind.isThreeOfKind;
-import static org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.TwoPair.isTwoPair;
-
 public class HandRankEvaluator {
     private static HandRankEvaluator handRankEvaluator;
 

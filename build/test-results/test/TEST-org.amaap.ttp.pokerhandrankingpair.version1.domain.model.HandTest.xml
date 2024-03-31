@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.HandTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-03-31T18:20:53" hostname="LAPTOP-205J7BQ6" time="0.011">
+<testsuite name="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.HandTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-03-31T18:25:42" hostname="LAPTOP-205J7BQ6" time="0.011">
   <properties/>
-  <testcase name="shouldBeAbleToCreateHandFromSymbols()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.HandTest" time="0.001"/>
+  <testcase name="shouldBeAbleToCreateHandFromSymbols()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.HandTest" time="0.0"/>
   <testcase name="shouldBeAbleToCreateHandWhenFiveCardArePassed()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.HandTest" time="0.002"/>
-  <testcase name="shouldBeAbleGetStringRepresentationOfHand()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.HandTest" time="0.002"/>
+  <testcase name="shouldBeAbleGetStringRepresentationOfHand()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.HandTest" time="0.003"/>
   <testcase name="shouldBeAbleToThrowInvalidHandCapacityExceptionWhenHandCapacityIsNegative()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.HandTest" time="0.002"/>
   <testcase name="shouldBeAbleToThrowInvalidHandCapacityExceptionWhenHandCapacityIsInvalid()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.HandTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>

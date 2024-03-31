@@ -26,10 +26,10 @@ public class Card {
 
     @Override
     public boolean equals(Object o) {
-<span class="pc bpc" id="L29" title="1 of 2 branches missed.">        if (this == o) return true;</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        if (this == o) return true;</span>
 <span class="fc bfc" id="L30" title="All 4 branches covered.">        if (o == null || getClass() != o.getClass()) return false;</span>
 <span class="fc" id="L31">        Card card = (Card) o;</span>
-<span class="pc bpc" id="L32" title="1 of 4 branches missed.">        return suit == card.suit &amp;&amp; rank == card.rank;</span>
+<span class="fc bfc" id="L32" title="All 4 branches covered.">        return suit == card.suit &amp;&amp; rank == card.rank;</span>
     }
 
     @Override
