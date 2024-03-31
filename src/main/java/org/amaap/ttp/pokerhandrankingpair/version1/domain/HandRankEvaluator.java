@@ -4,6 +4,7 @@ import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.Card;
 import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.Hand;
 import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.HandRank;
 import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.Rank;
+import org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.Pair;
 import org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.Straight;
 
 import java.util.HashMap;
@@ -23,8 +24,9 @@ public class HandRankEvaluator {
 
         if (Straight.isStraight(hand))
             return HandRank.STRAIGHT;
-        else
-            return HandRank.TWO_PAIR;
+        else if(Pair.isPair(hand))
+            return HandRank.PAIR;
+        return HandRank.TWO_PAIR;
 
     }
 
