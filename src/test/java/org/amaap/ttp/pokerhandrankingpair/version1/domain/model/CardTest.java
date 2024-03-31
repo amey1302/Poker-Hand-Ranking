@@ -1,6 +1,8 @@
 package org.amaap.ttp.pokerhandrankingpair.version1.domain.model;
 
 import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.exception.InvalidCardException;
+import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.exception.InvalidCardRankException;
+import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.exception.InvalidSuitException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -17,6 +19,30 @@ class CardTest {
 
         //assert
         assertNotNull("HEART_ACE",card.toString());
+    }
+    @Test
+    void shouldBeAbleToThrowInvalidSuitExceptionWhenSuitIsInvalid() {
+        // arrange & act
+        Rank rank = Rank.ACE;
+
+        // assert
+        assertThrows(InvalidSuitException.class, () -> Card.create(null, rank));
+
+    }
+
+    @Test
+    void shouldBeAbleToThrowInvalidCardRankExceptionWhenCardRankIsInvalid() {
+        // arrange & act
+        Suit suit = Suit.CLUB;
+
+        // assert
+        assertThrows(InvalidCardRankException.class, () -> Card.create(suit, null));
+    }
+
+    @Test
+    void shouldBeAbleToThrowInvalidCardExceptionWhenCardInvalid() {
+        // act & assert
+        assertThrows(InvalidCardException.class, () -> Card.create(null, null));
     }
     @Test
     void shouldBeAbleToTestHashCodeForTwoObjects() throws InvalidCardException {

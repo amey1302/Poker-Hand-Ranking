@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.CardTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-03-31T14:10:30" hostname="LAPTOP-205J7BQ6" time="0.053">
+<testsuite name="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.CardTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-03-31T14:13:16" hostname="LAPTOP-205J7BQ6" time="0.052">
   <properties/>
-  <testcase name="shouldBeAbleToTestForEqualObjects()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.CardTest" time="0.036"/>
-  <testcase name="shouldBeAbleToCreateACardWithSuitAndRank()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.CardTest" time="0.011"/>
-  <testcase name="shouldBeAbleToTestHashCodeForTwoObjects()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.CardTest" time="0.003"/>
+  <testcase name="shouldBeAbleToTestForEqualObjects()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.CardTest" time="0.028"/>
+  <testcase name="shouldBeAbleToCreateACardWithSuitAndRank()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.CardTest" time="0.008"/>
+  <testcase name="shouldBeAbleToThrowInvalidCardRankExceptionWhenCardRankIsInvalid()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.CardTest" time="0.004"/>
+  <testcase name="shouldBeAbleToTestHashCodeForTwoObjects()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.CardTest" time="0.002"/>
+  <testcase name="shouldBeAbleToThrowInvalidCardExceptionWhenCardInvalid()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.CardTest" time="0.002"/>
+  <testcase name="shouldBeAbleToThrowInvalidSuitExceptionWhenSuitIsInvalid()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.CardTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
