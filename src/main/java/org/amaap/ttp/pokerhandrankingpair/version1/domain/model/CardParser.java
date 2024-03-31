@@ -1,13 +1,15 @@
 package org.amaap.ttp.pokerhandrankingpair.version1.domain.model;
 
 import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.exception.InvalidCardException;
+import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.exception.InvalidCardRankException;
+import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.exception.InvalidSuitException;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CardParser {
     public static Card parseCard(String symbol) throws InvalidCardException {
-        if (symbol.length() != 2) {
+        if (symbol.length() != 2 ) {
             throw new InvalidCardException("Invalid card symbol: " + symbol);
         }
 
@@ -17,29 +19,25 @@ public class CardParser {
         Suit suit = parseSuit(suitSymbol);
         Rank rank = parseRank(rankSymbol);
 
-        if (suit == null || rank == null) {
-            throw new InvalidCardException("Invalid card symbol: " + symbol);
-        }
-
         return Card.create(suit, rank);
     }
 
-    private static Suit parseSuit(char symbol) {
+    private static Suit parseSuit(char symbol) throws InvalidCardException {
         for (Suit suit : Suit.values()) {
             if (suit.getKeyword().charAt(0) == symbol) {
                 return suit;
             }
         }
-        return null;
+        throw new InvalidSuitException("Invalid suit symbol: " + symbol);
     }
 
-    private static Rank parseRank(char symbol) {
+    private static Rank parseRank(char symbol) throws InvalidCardRankException {
         for (Rank rank : Rank.values()) {
             if (rank.getAbbreviation().charAt(0) == symbol) {
                 return rank;
             }
         }
-        return null;
+        throw new InvalidCardRankException("Invalid rank symbol: " + symbol);
     }
 
     public static List<Card> parseCards(List<String> symbols) throws InvalidCardException {

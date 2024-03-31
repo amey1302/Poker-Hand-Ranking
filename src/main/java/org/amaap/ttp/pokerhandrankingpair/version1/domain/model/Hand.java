@@ -2,9 +2,10 @@ package org.amaap.ttp.pokerhandrankingpair.version1.domain.model;
 
 import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.exception.InvalidCardException;
 import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.exception.InvalidHandCapacityException;
-import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.validator.HandValidator;
 
 import java.util.List;
+
+import static org.amaap.ttp.pokerhandrankingpair.version1.domain.model.validator.HandValidator.isInvalidHandCapacity;
 
 public class Hand {
     private List<Card> cards;
@@ -15,11 +16,9 @@ public class Hand {
 
 
     public static Hand create(List<String> symbols) throws InvalidCardException, InvalidHandCapacityException {
-        if(symbols == null)
+        if (symbols == null || isInvalidHandCapacity(symbols))
             throw new InvalidHandCapacityException("Hand should contain exactly five Cards");
         List<Card> cards = CardParser.parseCards(symbols);
-        if (cards == null || HandValidator.isInvalidHandCapacity(cards))
-            throw new InvalidHandCapacityException("Hand should contain exactly five Cards");
         return new Hand(cards);
     }
 
@@ -31,10 +30,7 @@ public class Hand {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("[");
         for (Card card : cards) {
-            stringBuilder.append("\"").append(card.getSuit().getKeyword()).append(card.getRank().getAbbreviation()).append("\" ");
-        }
-        if (stringBuilder.length() > 0) {
-            stringBuilder.setLength(stringBuilder.length() - 1);
+            stringBuilder.append("\"").append(card.getSuit().getKeyword()).append(card.getRank().getAbbreviation()).append("\"");
         }
         stringBuilder.append("]");
         return stringBuilder.toString();

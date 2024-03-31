@@ -8,6 +8,7 @@ import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.exception.Invali
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -27,7 +28,7 @@ class HandValidatorTest {
     @Test
     void shouldBeAbleReturnTrueWhenHandCapacityIsFive() throws InvalidCardException {
         // arrange
-        List<Card> cards = cardBuilder.getRandomCards();
+        List<String> cards = Arrays.asList("SA","C7","D9","S7","H6");
 
         // act
         boolean isValid = HandValidator.isValidHandCapacity(cards);
@@ -38,8 +39,7 @@ class HandValidatorTest {
     @Test
     void shouldBeAbleReturnFalseWhenHandCapacityIsSix() throws InvalidCardException {
         // arrange
-        List<Card> cards = cardBuilder.getRandomCards();
-        cards.add(Card.create(Suit.HEART, Rank.ACE));
+        List<String> cards = Arrays.asList("SA","C7","D9","S7","H6","C8");
 
         // act
         boolean isInvalid = HandValidator.isInvalidHandCapacity(cards);
@@ -50,9 +50,7 @@ class HandValidatorTest {
     @Test
     void shouldBeAbleReturnFalseWhenHandCapacityIsTwo() throws InvalidCardException {
         // arrange
-        List<Card> cards = new ArrayList<>();
-        cards.add(Card.create(Suit.HEART, Rank.ACE));
-        cards.add(Card.create(Suit.SPADE, Rank.TWO));
+        List<String> cards = Arrays.asList("SA","C7");
 
         // act
         boolean isInvalid = HandValidator.isInvalidHandCapacity(cards);
@@ -60,5 +58,4 @@ class HandValidatorTest {
         // assert
         assertTrue(isInvalid);
     }
-
 }

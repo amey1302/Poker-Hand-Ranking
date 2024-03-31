@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.amaap.ttp.pokerhandrankingpair.version1.domain.HandRankEvaluatorTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-03-31T17:05:55" hostname="LAPTOP-205J7BQ6" time="0.033">
+<testsuite name="org.amaap.ttp.pokerhandrankingpair.version1.domain.HandRankEvaluatorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-03-31T18:20:53" hostname="LAPTOP-205J7BQ6" time="0.052">
   <properties/>
-  <testcase name="shouldBeAbleToReturnSingletonInstanceOfTheClass()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.HandRankEvaluatorTest" time="0.029"/>
+  <testcase name="shouldBeAbleToReturnSingletonInstanceOfTheClass()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.HandRankEvaluatorTest" time="0.03"/>
+  <testcase name="shouldBeAbleToReturnTheRankForHighCardWithHighRankCard()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.HandRankEvaluatorTest" time="0.015"/>
   <testcase name="shouldBeAbleToIntializeTheInstanceOfHandRankEvaluatorClass()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.HandRankEvaluatorTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

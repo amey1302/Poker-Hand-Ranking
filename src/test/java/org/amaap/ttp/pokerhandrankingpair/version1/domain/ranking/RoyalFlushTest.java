@@ -5,14 +5,14 @@ import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.Hand;
 import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.HandRank;
 import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.exception.InvalidCardException;
 import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.exception.InvalidHandCapacityException;
-import org.junit.Test;
+
 
 import java.util.Arrays;
 import java.util.List;
 
 import static org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.RoyalFlush.isRoyalFlush;
 import static org.junit.jupiter.api.Assertions.*;
-
+import org.junit.jupiter.api.Test;
 class RoyalFlushTest {
     @Test
     void shouldBeAbleToIntializeTheInstanceOfRoyalFlushClass() {

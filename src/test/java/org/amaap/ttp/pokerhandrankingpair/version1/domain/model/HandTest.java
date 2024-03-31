@@ -54,7 +54,7 @@ class HandTest {
         Hand hand = Hand.create(cards);
         String expected = "[" + hand.getCards().stream()
                 .map(card -> "\"" + card.getSuit().getKeyword() + card.getRank().getAbbreviation() + "\"")
-                .collect(Collectors.joining(" ")) + "]";
+                .collect(Collectors.joining("")) + "]";
 
         // act
         String actual = hand.getStringRepresentation();

@@ -1,6 +1,7 @@
 package org.amaap.ttp.pokerhandrankingpair.version1.domain;
 
 import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.*;
+import org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.*;
 
 import java.util.Comparator;
 import java.util.HashMap;
@@ -28,23 +29,23 @@ public class HandRankEvaluator {
 
     public static HandRank evaluateRanking(Hand hand) {
         List<Card> cards = hand.getCards();
-        if (isRoyalFlush(hand)) {
+        if (RoyalFlush.isRoyalFlush(hand)) {
             return HandRank.ROYAL_FLUSH;
-        } else if (isStraightFlush(hand)) {
+        } else if (StraightFlush.isStraightFlush(hand)) {
             return HandRank.STRAIGHT_FLUSH;
-        } else if (isFourOfKind(hand)) {
+        } else if (FourOfKind.isFourOfKind(hand)) {
             return HandRank.FOUR_OF_A_KIND;
-        } else if (isFullHouse(hand)) {
+        } else if (FullHouse.isFullHouse(hand)) {
             return HandRank.FULL_HOUSE;
-        } else if (isFlush(hand)) {
+        } else if (Flush.isFlush(hand)) {
             return HandRank.FLUSH;
-        } else if (isStraight(hand)) {
+        } else if (Straight.isStraight(hand)) {
             return HandRank.STRAIGHT;
-        } else if (isThreeOfKind(hand)) {
+        } else if (ThreeOfKind.isThreeOfKind(hand)) {
             return HandRank.THREE_OF_A_KIND;
-        } else if (isTwoPair(hand)) {
+        } else if (TwoPair.isTwoPair(hand)) {
             return HandRank.TWO_PAIR;
-        } else if (isPair(hand)) {
+        } else if (Pair.isPair(hand)) {
             return HandRank.PAIR;
         } else {
             cards.sort(Comparator.comparing(card -> card.getRank()));

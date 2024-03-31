@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.CardParserTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-03-31T17:05:55" hostname="LAPTOP-205J7BQ6" time="0.005">
+<testsuite name="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.CardParserTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-03-31T18:20:53" hostname="LAPTOP-205J7BQ6" time="0.016">
   <properties/>
-  <testcase name="shouldBeAbleToThrowInvalidCardExceptionForInvalidCardSymbol()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.CardParserTest" time="0.003"/>
+  <testcase name="shouldBeAbleToThrowInvalidCardSuitExceptionForInvalidCardSuit()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.CardParserTest" time="0.009"/>
+  <testcase name="shouldBeAbleToThrowInvalidCardRankExceptionForInvalidCardRank()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.CardParserTest" time="0.002"/>
+  <testcase name="shouldBeAbleToThrowInvalidCardExceptionWhenSymbolLengthIsNot2()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.CardParserTest" time="0.002"/>
   <testcase name="shouldBeAbleToThrowInvalidCardExceptionForCardSymbolContainsMoreThan2Characters()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.CardParserTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
