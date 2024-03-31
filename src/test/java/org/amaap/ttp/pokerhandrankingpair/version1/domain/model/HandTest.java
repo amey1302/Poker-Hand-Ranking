@@ -1,5 +1,6 @@
 package org.amaap.ttp.pokerhandrankingpair.version1.domain.model;
 
+import org.amaap.ttp.pokerhandrankingpair.version1.domain.builder.Builder;
 import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.exception.InvalidCardException;
 import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.exception.InvalidHandCapacityException;
 import org.junit.jupiter.api.Test;
@@ -11,6 +12,7 @@ import java.util.stream.Collectors;
 import static org.junit.jupiter.api.Assertions.*;
 
 class HandTest {
+    Builder builder = new Builder();
     @Test
     void shouldBeAbleToCreateHandWhenFiveCardArePassed() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
@@ -64,13 +66,7 @@ class HandTest {
     void shouldBeAbleToCreateHandFromSymbols() throws InvalidCardException, InvalidHandCapacityException {
         // arrange
         List<String> symbols = Arrays.asList("S2", "D5", "C7", "ST", "HA");
-        List<Card> expectedCards = Arrays.asList(
-                Card.create(Suit.SPADE, Rank.TWO),
-                Card.create(Suit.DIAMOND, Rank.FIVE),
-                Card.create(Suit.CLUB, Rank.SEVEN),
-                Card.create(Suit.SPADE, Rank.TEN),
-                Card.create(Suit.HEART, Rank.ACE)
-        );
+        List<Card> expectedCards = builder.getCards();
 
         // act
         Hand hand = Hand.create(symbols);
