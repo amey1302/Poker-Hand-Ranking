@@ -1,11 +1,7 @@
 package org.amaap.ttp.pokerhandrankingpair.version1.domain;
 
-import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.Card;
-import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.Hand;
-import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.HandRank;
-import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.Rank;
-import org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.Pair;
-import org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.Straight;
+import org.amaap.ttp.pokerhandrankingpair.version1.domain.model.*;
+import org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -21,12 +17,18 @@ public class HandRankEvaluator {
     }
 
     public static HandRank evaluateRanking(Hand hand) {
-
-        if (Straight.isStraight(hand))
+        if (RoyalFlush.isRoyalFlush(hand)) {
+            return HandRank.ROYAL_FLUSH;
+        } else if (StraightFlush.isStraightFlush(hand)) {
+            return HandRank.STRAIGHT_FLUSH;
+        } else if (Straight.isStraight(hand)) {
             return HandRank.STRAIGHT;
-        else if(Pair.isPair(hand))
-            return HandRank.PAIR;
-        return HandRank.TWO_PAIR;
+        } else if (TwoPair.isTwoPair(hand)) {
+            return HandRank.TWO_PAIR;
+        } else if (Flush.isFlush(hand)) {
+            return HandRank.FLUSH;
+        }
+        return HandRank.PAIR;
 
     }
 
@@ -36,6 +38,14 @@ public class HandRankEvaluator {
             rankCount.put(card.getRank(), rankCount.getOrDefault(card.getRank(), 0) + 1);
         }
         return rankCount;
+    }
+
+    public static Map<Suit, Integer> suitCount(List<Card> cards) {
+        Map<Suit, Integer> suitCount = new HashMap<>();
+        for (Card card : cards) {
+            suitCount.put(card.getSuit(), suitCount.getOrDefault(card.getSuit(), 0) + 1);
+        }
+        return suitCount;
     }
 
 }
