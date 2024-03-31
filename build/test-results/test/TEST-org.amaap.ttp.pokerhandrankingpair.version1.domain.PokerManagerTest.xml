@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.amaap.ttp.pokerhandrankingpair.version1.domain.PokerManagerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-03-31T17:05:55" hostname="LAPTOP-205J7BQ6" time="0.018">
+  <properties/>
+  <testcase name="shouldBeAbleToCreateHandFromSymbols()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.PokerManagerTest" time="0.005"/>
+  <testcase name="shouldBeAbleToCreateASingleCard()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.PokerManagerTest" time="0.001"/>
+  <testcase name="shouldBeAbleToEvaluateHandAndReturnItsRanking()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.PokerManagerTest" time="0.01"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

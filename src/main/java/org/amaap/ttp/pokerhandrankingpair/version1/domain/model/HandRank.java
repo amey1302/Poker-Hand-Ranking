@@ -11,5 +11,11 @@ public enum HandRank {
     TWO_PAIR,
     PAIR,
     HIGH_CARD;
+    private Rank highestCard;
+
+    public HandRank withHighestCard(Rank highestCard) {
+        this.highestCard = highestCard;
+        return this;
+    }
 
 }

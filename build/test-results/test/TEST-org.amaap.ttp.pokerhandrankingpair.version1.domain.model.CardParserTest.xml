@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.CardParserTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-03-31T17:05:55" hostname="LAPTOP-205J7BQ6" time="0.005">
+  <properties/>
+  <testcase name="shouldBeAbleToThrowInvalidCardExceptionForInvalidCardSymbol()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.CardParserTest" time="0.003"/>
+  <testcase name="shouldBeAbleToThrowInvalidCardExceptionForCardSymbolContainsMoreThan2Characters()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.model.CardParserTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
