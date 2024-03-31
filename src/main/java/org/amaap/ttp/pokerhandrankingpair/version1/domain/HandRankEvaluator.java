@@ -21,9 +21,19 @@ public class HandRankEvaluator {
 
     public static HandRank evaluateRanking(Hand hand) {
 
-        Straight.isStraight(hand);
-        return HandRank.STRAIGHT;
+        if (Straight.isStraight(hand))
+            return HandRank.STRAIGHT;
+        else
+            return HandRank.TWO_PAIR;
+
     }
-    
+
+    public static Map<Rank, Integer> rankCount(List<Card> cards) {
+        Map<Rank, Integer> rankCount = new HashMap<>();
+        for (Card card : cards) {
+            rankCount.put(card.getRank(), rankCount.getOrDefault(card.getRank(), 0) + 1);
+        }
+        return rankCount;
+    }
 
 }
