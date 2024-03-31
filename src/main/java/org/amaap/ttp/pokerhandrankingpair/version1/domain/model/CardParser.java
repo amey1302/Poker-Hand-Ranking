@@ -23,6 +23,7 @@ public class CardParser {
 
         return Card.create(suit, rank);
     }
+
     private static Suit parseSuit(char symbol) {
         for (Suit suit : Suit.values()) {
             if (suit.getKeyword().charAt(0) == symbol) {
@@ -31,6 +32,7 @@ public class CardParser {
         }
         return null;
     }
+
     private static Rank parseRank(char symbol) {
         for (Rank rank : Rank.values()) {
             if (rank.getAbbreviation().charAt(0) == symbol) {

@@ -44,4 +44,17 @@ public class PokerManagerTest {
         // assert
         assertEquals(expectedCards, actualCards);
     }
+    @Test
+    void shouldBeAbleToEvaluateHandAndReturnItsRanking() throws InvalidCardException, InvalidHandCapacityException {
+        // arrange
+        List<String> cards = Arrays.asList("H4", "S5", "D6", "H7", "C8");
+        Hand hand = Hand.create(cards);
+        HandRank expected = HandRank.STRAIGHT;
+
+        // act
+        HandRank actual = pokerManager.evaluateHandRanking(hand);
+
+        // assert
+        assertEquals(expected, actual);
+    }
 }
