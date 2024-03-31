@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.PairTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-03-31T16:37:19" hostname="LAPTOP-205J7BQ6" time="0.009">
+<testsuite name="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.PairTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-03-31T16:44:49" hostname="LAPTOP-205J7BQ6" time="0.01">
   <properties/>
-  <testcase name="shouldBeAbleToReturnTheRankForPair()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.PairTest" time="0.001"/>
+  <testcase name="shouldBeAbleToReturnTheRankForPair()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.PairTest" time="0.002"/>
   <testcase name="shouldBeAbleToReturnTrueForPairCardsWithPairInstance()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.PairTest" time="0.002"/>
-  <testcase name="shouldBeAbleToReturnFalseIfDifferentCardsPassedToIsPair()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.PairTest" time="0.002"/>
+  <testcase name="shouldBeAbleToReturnFalseIfDifferentCardsPassedToIsPair()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.PairTest" time="0.001"/>
   <testcase name="shouldBeAbleToIntializeTheInstanceOfPairClass()" classname="org.amaap.ttp.pokerhandrankingpair.version1.domain.ranking.PairTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

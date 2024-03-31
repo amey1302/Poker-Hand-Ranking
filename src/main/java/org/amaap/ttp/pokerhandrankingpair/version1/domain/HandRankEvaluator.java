@@ -29,6 +29,8 @@ public class HandRankEvaluator {
             return HandRank.FLUSH;
         } else if (FourOfKind.isFourOfKind(hand)) {
             return HandRank.FOUR_OF_A_KIND;
+        }else if (ThreeOfKind.isThreeOfKind(hand)) {
+            return HandRank.THREE_OF_A_KIND;
         }
         return HandRank.PAIR;
 
